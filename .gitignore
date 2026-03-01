@@ -8,6 +8,12 @@ __pycache__/
 htmlcov/
 *.egg-info/
 .DS_Store
-debug_full.log
+.trae/
 .paddlex/
-.fujian/
+.git/
+debug_full.log
+scripts/
+volumes/
+fujian/
+README.md
+run_app.py

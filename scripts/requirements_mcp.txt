@@ -1,6 +1,0 @@
-mcp
-paddlepaddle
-paddleocr
-pdf2image
-opencv-python
-numpy
