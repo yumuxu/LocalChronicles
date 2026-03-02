@@ -17,3 +17,7 @@ volumes/
 fujian/
 README.md
 run_app.py
+app.py
+pages/
+.streamlit/
+dist/
