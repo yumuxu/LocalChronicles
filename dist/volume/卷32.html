@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+
+<html lang="zh-CN"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>八闽通志 - 八闽通志</title>
+<meta name="description" content="本卷为《八闽志》记载涉及3个府级行政区划，描述山川地理。">
+<link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500;700&family=Noto+Serif+SC:wght@400;700&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+        darkMode: "class",
+        theme: {
+            extend: {
+                colors: {
+                    "primary": "#9f2d23",
+                    "background-light": "#FDFCF0",
+                    "background-dark": "#201412",
+                    "charcoal": "#2C2C2C",
+                    "paper": "#F7F5E8",
+                    "ink": "#383838",
+                },
+                fontFamily: {
+                    "display": ["Public Sans", "sans-serif"],
+                    "serif": ["Noto Serif SC", "serif"],
+                },
+                borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+            },
+        },
+    }
+</script>
+<style>
+    .vertical-text {
+        writing-mode: vertical-rl;
+        text-orientation: mixed;
+    }
+</style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-ink dark:text-slate-200 font-display min-h-screen flex flex-col">
+<!-- Header -->
+<header class="sticky top-0 z-50 w-full border-b border-primary/10 bg-background-light/95 backdrop-blur dark:bg-background-dark/95">
+<div class="mx-auto flex h-16 max-w-7xl items-center justify-between px-6">
+<div class="flex items-center gap-6">
+<a class="flex items-center gap-3 text-charcoal dark:text-white group" href="/">
+<div class="flex h-8 w-8 items-center justify-center rounded bg-primary text-white transition-colors group-hover:bg-primary/90">
+<span class="material-symbols-outlined text-xl">auto_stories</span>
+</div>
+<h1 class="font-serif text-xl font-bold tracking-tight">八闽通志</h1>
+</a>
+<nav class="hidden md:flex items-center gap-6 text-sm font-medium text-charcoal/80 dark:text-slate-300">
+<a class="hover:text-primary transition-colors" href="/">Home</a>
+<a class="hover:text-primary transition-colors" href="/library.html">Volumes</a>
+<a class="hover:text-primary transition-colors" href="/search.html">Search</a>
+<a class="hover:text-primary transition-colors" href="/about.html">About</a>
+</nav>
+</div>
+<div class="flex items-center gap-4">
+<div class="relative hidden sm:block">
+<span class="absolute inset-y-0 left-0 flex items-center pl-3 text-primary/60">
+<span class="material-symbols-outlined text-lg">search</span>
+</span>
+<input id="searchInput" class="h-9 w-64 rounded-full border-none bg-primary/5 py-1 pl-10 pr-4 text-sm text-charcoal placeholder-primary/40 focus:ring-1 focus:ring-primary dark:bg-white/10 dark:text-white" placeholder="Search volumes..." type="text"/>
+</div>
+</div>
+</div>
+</header>
+<!-- Main Content -->
+<main class="flex-1">
+<div class="mx-auto max-w-7xl px-6 py-8">
+<!-- Breadcrumbs -->
+<nav class="mb-8 flex items-center text-sm text-charcoal/60 dark:text-slate-400">
+<a class="hover:text-primary hover:underline" href="/library.html">Library</a>
+<span class="mx-2 text-primary/40">/</span>
+<a class="hover:text-primary hover:underline" href="#">Fujian Provincial Chronicles</a>
+<span class="mx-2 text-primary/40">/</span>
+<span class="font-medium text-charcoal dark:text-slate-200">八闽通志</span>
+</nav>
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
+<!-- Main Reader Column -->
+<article class="lg:col-span-8 xl:col-span-8">
+<!-- Title Section -->
+<div class="mb-10 border-b border-primary/10 pb-6">
+<div class="flex items-start justify-between">
+<div>
+<span class="mb-2 inline-block rounded bg-primary/10 px-2 py-0.5 text-xs font-semibold uppercase tracking-wider text-primary">Historical</span>
+<h1 class="font-serif text-4xl font-bold text-charcoal dark:text-white leading-tight mb-2">八闽通志</h1>
+<p class="text-charcoal/60 dark:text-slate-400 text-lg"></p>
+</div>
+<div class="flex gap-2">
+<button class="p-2 text-charcoal/60 hover:text-primary hover:bg-primary/5 rounded-full transition-colors" title="Bookmark">
+<span class="material-symbols-outlined">bookmark</span>
+</button>
+<button class="p-2 text-charcoal/60 hover:text-primary hover:bg-primary/5 rounded-full transition-colors" title="Print">
+<span class="material-symbols-outlined">print</span>
+</button>
+<button class="p-2 text-charcoal/60 hover:text-primary hover:bg-primary/5 rounded-full transition-colors" title="Share">
+<span class="material-symbols-outlined">share</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Modern Summary Box -->
+
+<div class="mb-12 overflow-hidden rounded-lg bg-paper border border-primary/5 dark:bg-white/5 dark:border-white/10 shadow-sm">
+<div class="flex flex-col md:flex-row">
+<div class="relative h-48 w-full md:h-auto md:w-1/3 overflow-hidden">
+<div class="absolute inset-0 bg-cover bg-center" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuC-JGvQVHWmyNh7BUJXeT_74AzCgoUabelktaqDxrls3BqnpHMpc_5BYJqJLXvUfKEYuZY9gst8zu-MIlD3sR9ooO49hcxWbJSuZmBkbaqWwxC5B3zY_sMxEi3ac2MoVMjygAp-r-qfNXuDZnO7xZbuEJbgHq0SA4vM680yacuWFGAif5JAeDZ-SVtv58P6V-UqxVCxN3amajxNe7_KWc9PSh1xnmVTl9puKpAapRMkDabnEoDAy5o-P-aARRYaRwMrvsHfLGkV85A');"></div>
+<div class="absolute inset-0 bg-primary/10 mix-blend-multiply"></div>
+</div>
+<div class="p-6 md:w-2/3">
+<h3 class="mb-2 flex items-center gap-2 font-serif text-lg font-bold text-primary">
+<span class="material-symbols-outlined text-lg">summarize</span>
+Modern Summary
+</h3>
+<p class="text-base leading-relaxed text-charcoal/80 dark:text-slate-300">
+本卷为《八闽志》记载涉及3个府级行政区划，描述山川地理。
+</p>
+</div>
+</div>
+</div>
+
+<!-- Main Text Content -->
+<div class="prose prose-lg max-w-none font-serif text-ink dark:text-slate-200">
+<p class="leading-loose mb-6 text-lg text-charcoal/90 dark:text-slate-300">八闽通志卷之三十二历官郡县建宁府〔国朝】文职鲁仁杰(本府)知府胡禛芮麟见《名宦志》。史常徐施仁裴冕(俱洪武间任。）刘敬见《名宦志》。王溥(俱宣德间任。)张瑛见《名子王永乐间任。张顺宦志》。孙亶景泰间任。贺沈刘钺(俱天顺间任。)浦镛曾会张正(俱成化间任。)刘与弘治元年任。同知陈永吕敏杨志铭永乐间任。王信李钺（俱天八闽通志顺间任。）刘文林荣李明(俱成化间任。)通判方以正宣德间任。萧瓌[1]莫震天顺间任。陈翼杨秀[2](俱成化间任。)推官郎子贞陈永见《名宦志》。(俱洪武间任。)胡缉天顺初任。齐敬戴春李时新见《名宦志》。(俱成化间任。)(经历司)经历闵玉天顺间任。张祥成化间任。知事吕政景泰间任。潘满吴海何容(俱天顺间任。)姜仕溢陈镗(俱成化间任。)照磨所照磨张敏天顺初任。靳清齐鉴吴旺(俱成化间任。）检校李新永乐间任。王珣天顺间任。冯冕成化间任。(儒学)教授周斌张信永乐间任。彭晶俞深丁侃罗能任善董珏黄伯川训导萧韶永乐间任。姚懋黎方王范升徐玉汪廷贵顾珣汪李让罗文王瓘彭张濂严经罗镛周珏陈瑚陈文任球何杰程匡吴纪(建安县)知县裴珏余子恭(俱洪武间任。）张准见《名宦志》。戴肃洪熙初任。胡钦正统间任。葛琬景泰间任。胡霖张端周正徐琮桂镐(俱成化间任。)县丞姚震洪武间任。缪瑞成化间任。主簿袁贵成化间任。典史余子隆永乐初任。王轸成化间任。(儒学）教谕朱义天顺间任。吕凯楼伟金许升(俱成化间任。)训导汪赐张瑞董衡康庄(俱成化间任。)(瓯宁县）知县展鉴王迪（俱洪武间任。）黄参永乐间任。章盛宜德间任。齐端焦从周正统间任。陈祚景泰间任。乔铭见《名宦志》。林鸿陈英(俱成化卷之三十二秩官间任。）县丞李普永乐间任。叶镇刘跃(俱天顺间任。)陈恕顾完陈旭胡智(俱成化间任。)主簿印志叶勤(俱宣德同任。)王偶景泰间任。吉永琇林凉[3]（俱天顺间任。)徐宇曾昕顷敏(俱成化间任。)典史郑友富天顺间任。周冕杨春张信封良广(俱成化间任。)(儒学)教谕薛仲南周芳罗翰永乐间任。宋毓宜德间任。王公拳正统间任。戴委景泰间任。袁亮天顺间任。金许升陈梅余燠郭甫俊(俱成化间任。)训导叶机洪武间任。吴仲贤永乐间任。姚懋倪最宣德间任。方式童伉金祐盛箴(俱正统间任。)王邦直王逊夫孔文献(俱天顺间任。)裴崇礼徐坝胡希岳曹祖龄顾盛沈汉邓敬(俱成化间任。)(浦城县)知县张鹏举见《名宦志》。宋性张宗颜徐瓒史志可(上三人见《名宦志》。)胡观陈憧[5](俱永乐间任。）周原庆见《名宦志》。宣德间任。张镛甘何俊(俱正统间任。)顾恒天顺间任。杨惇张刘珩许澄(俱成化间任。）县丞裴思明张玉成(俱见《名宦志》。)朱德昌(俱洪武间任。)王廉何巽(俱永乐间任。)赵利吕昭何俊(上二人俱见《名宦志》。已上俱正统间任。）李善天顺间任。黄俊王震程清夏寅(俱成化间任。)主簿叶子寿洪武间任。周聚正统间任。吴安葛琳孔硕杨本(俱成化间任。)典史罗仲固永乐间任。李贵周监[6]周凯高明潘宁(俱成化间任。）（儒学)教谕余守弘洪武间任。王乐孟胡清景泰间任。毕遵胡昱李璞(俱成化间任。)人闽通志训导赵景和洪武初任。徐彦诚永乐间任。张协倪深[7]（俱宣德间任。)应杰景泰间任。陈璨罗恒郑璇任荣唐应征赵彩唐哲(俱成化间任。)(建阳县)知县吴义范子畴郭伯恭陈敏(上二人见《名宦志》。已上俱洪武间任。）陈宗源徐铎张光启见《名宦志》。(俱宣德间任。)何景春王原善尹戴鲁(俱正统间任。)叶荣宋烈龙韬陈让[8]（俱景泰间任。)陈显天顺间任。刘渊项旻海澄汪津9](俱成化间任。)县丞陆镒见《名宦志》。金荣周荣景泰间任。何景春见《名宦志》。梁懋刘昂天顺间任。杨贞[10]邓仁熊杰(俱成化间任。)主簿丘松陈宗源(俱见《名宦志》。）萧旺正统间任。姜衡景泰间任。许雄陈昺(俱成化间任。)典史钱象正统间任。夏昂天顺间任。武昭任乙秸赵铭(俱成化间任。）（儒学)教谕李继阮得顺王篪欧阳时俊俱正统间任。徐龄徐律(俱天顺间任。)宋谦陈畅张轮(俱成化间任。)训导李文我熊圭范志谦(俱洪武间任。)董镛[12]永乐间任。李继宣德间任。周玉正统间任。周福金熙(俱天顺间任。)严彪华山孙谋(俱成化间任。)(松溪县)知县常钦祖梁楚材周常刘进刘中霄高耿中李景初李宗中敷季雅韩敏钦恭(俱洪武间任。）曾惟中赵子述1周景辰（俱永乐间任。)周思敬邹良曹逊王杰宣德间任。李坚张绅(俱正统间任。)张祺景泰间任。刘恒[14]杨观天顺间任。周吉昌沈立欧阳麟褚潭(俱成化间任。)卷之三十二秩官县丞张惟清李嘉（俱洪武间任。）吴邦达范秉和张翥景泰间任。伍爵谢谦(俱天顺间任。)管良虞虑[15]高弘叶兴刘芳(俱成化间任。)主簿洪子润[16]吴岱景泰间任。靖泰陈政(俱天顺间任。)汤浚刘洪黄庆陈玄玉(俱成化间任。)典史王敬景泰间任。濮旻天顺间任。沈溥梁升徐德严政潘富(俱成化间任。)（儒学)教谕刘观永乐间任。张湜正统间任。张忞景泰间任。夏坦[17]曾称李辅冯韵(俱成化间任。)训导傅小岩叶均祐李子傅[18]（俱洪武间任。)宋宽李铨干怡俞珣晏绂(俱成化间任。)(崇安县)知县陈颧徐得刘伯益夏德章邵文昂张子彬曹端（上二人见《名宦志》。已上俱洪武间任。)谢雅卿赵麟(俱永乐间任。)金怀宣德间任。姚宗显景泰间任。唐纪张锐王肃余衍(俱成化间任。）县丞安处善见《名宦志》。段璧杨以章(上二人俱永乐间任。）陈让见《名宦志》。柳春李干(上二人俱正统间任。）刘英景泰间任。梁善天顺问任。张麟杨芾(俱成化间任。)主簿卢铭永乐间任。齐整宣德间任。金韡正统间任。冉清景泰间任。王锭张纪(俱成化问任)。典史王浩顺永乐间任。何文质宣德间任。陈鉴景泰间任。金玉天顺间任。(儒学)教谕胡云洪武中任。章魄永乐间任。程光义宣德初任。黄通刘艮(俱正统间任。)杨彦心景泰间任。刘秩成化间任。训导彭逊冯回(俱洪武间任。)丘纯刘奎(俱永乐间任。)蒋希温卢廷俊宣德间任。周勤大国通心夏朝甫[1]（俱正统间任。)李让金□(俱景泰间任。)锷[20]天顺间任。刘晋成化间任。黄裳(俱见《名宦志》。）吴(政和县)知县李子春朝宗叶应祥傅玉润赵克礼张惠见《名宦志》。黄斌张焕江显见《名宦志》。叶志高顾让景泰间任。王廷举靳学王鉴刘经吴理陈绮沈伦成化间任。县丞许穆见《名宦志》。熊达赵继祖沈伯瑜夏谟朱蒸民杨义车勿李邦达陈继祖黄思义范廷贵雷富杨启张浚康谟萧铨天顺间任。陶添伦潘玘郑充沈清(俱成化间任。)主簿石彦章杨让陆文铭方遇生吴禛涂铣金舄陆常徐显袁尚宾陆义扈子贤张熙史宪成化间任。典史郭斯垕见《名宦志》。黎珦林皋文宗信余本张铜符祐蒋景芳叶志豪钮惠王良杨机成化间任。(儒学)教谕刘彦行王守约(俱洪武间任。）吕敏永乐初任。姚孟黄人正陈思宣德间任。辛珪叶宗维章琦胡质黄定濮智石辉(上三人俱成化间任。)训导余应章邦彦[21](俱洪武间任。）薛孟谦陈泰潘子羽王汝绩（俱永乐间任。）王袍张庸林皋冯浩涂自节颜颜果潘福杨经(俱天顺间任。)顾荣赵颐钟玑章源[22]沈哗(俱成化间任。)(寿宁县)知县陈醇景泰间任。谢俊王肃沈能(俱天顺间任。)鲍风郭清(俱成化间任。)县丞马璲景泰间任。李真天顺间任。魏昶何显郑环李荣(俱成化间任。）主簿史立正景泰间任。王纶天顺间任。卷之三十二秩官何初王存芳王缙周运(俱成化间任。)典史林永景泰间任。陈浩陈彰卢畔(俱天顺间任。)范澄李孟李滔戴敏津(俱成化间任。）(儒学)教谕彭瑓姚俊英(俱天顺间任。)黄干于冕劳俊(俱成化间任。）训导周序天顺间任。刘熙陈纪王玺（俱成化间任。)武职(建宁左卫指挥使司)指挥使述英洪武初任。冯钊由本卫同知升。永乐间任。冯渊袭父钊职。杨铎范铎袭父贡职。正统间任。冯杰袭父渊职。冯荣袭兄杰职。范泽冯琇袭父荣职。阐玉袭父文职。(上三人俱成化间任。)指挥同知冯钊洪武间任。徐信凌洋(俱永乐间任)。陈良洪熙初任。李恕陈贤袭父良职。正统间任。黄文以父友授本卫金事有功升任。徐钺袭祖父信职[23]。李镛以父镇授本卫金事有功升任。蒋伯良陈璨袭父贤职。(俱景泰间任。）李铠袭兄镛职。凌福袭叔洋职。蒋大材(俱天顺问任。)徐溥袭父钱职。李昂(俱成化间任)。指挥金事王用洪武间任。黄斌李信杨英(俱永乐间任。)杨茂袭兄瑛职。宣德初任。黄友袭父斌职。李禛袭父信职。杨忠袭父茂职。（俱正统间任。）吴靖由中所千户升。康贵由后所千户升。黄庆(俱景泰同任。)张统袭父凯职。天顺间任。康荣袭兄贵职。张顺袭父统职。杨荣袭父忠职。黄明袭父庆职。吴剥袭父靖职。黄昕袭兄明职。黄镇袭父昕职。镇抚贺荣洪武间任。周得永乐间任。贺得袭父荣八闽通志职。周智袭父得职。宣德问任。贺锐袭父得职。。周钰袭父智职。贺渊天顺间任。(左千户所)正千户后玖后平袭姪玖职。俱洪武间任。后理袭父平职。永乐间任。后荣袭父理职。天顺问任。副干户齐整金试美(俱永乐间任。）金安齐铭(俱宣德间任。)齐文袭父铭职。金亮袭父安职。(俱景泰间任。)金勇袭父亮职。齐贤袭父文职。(俱成化间任。)百户朱耀潘祐王环阮得孙璧(俱洪武间任。)杨政朱兴袭父耀职。潘贵袭父祐职。阮守呼安(俱永乐间任。)杨真袭父政职。孙胜洪熙初任。呼贵袭父安职，宜德间任。杨能袭父真职，阮凯袭父宁职。王贵袭父环职。朱寿袭父兴职。孙铭袭父胜职。朱胜袭父寿职。潘祥袭父贵职。王赞袭父贵职。杨钰袭父能职。王纲呼纲袭伯贵职。孙滨袭父铭职。杨忠袭兄钰职]。王镇袭父纳职。成化间任。(右千户所)正千户祈义本所副千户升。孙荣俱永乐间任。祈璧正统间任。副千户祈义洪武间任。刘勇永乐间任。百户林旺韩礼（俱洪武闽任。）林永韩隆袭父礼职。韩文袭兄隆职。林福韩胜袭叔文职。林亨韩能正统间任。林镇成化间任。(中千户所）正千户吴达由百户升。永乐间任。吴靖武能成化间任。副千户杜贵洪武间任。褚子贵褚斌袭父子责职。（俱永乐间任。）杜斌袭父贵职。杜礼借兄斌职。杜胜褚宁袭父斌职。景泰初任。杜能袭父胜职。崔勋天顺同任。杜刚袭父能职。褚华袭父宁职。(俱成化间任。)百户钟富桑荣路达桑彬卷之三十二秩官袭父荣职。（俱洪武间任。）王礼吴荣王晟袭父礼职。(俱永乐间任。）路英袭父达职。王荣袭父晟职。（俱宣德间任。）桑隆袭父彬职。正统间任。王信袭父荣职。景秦间任。路通袭父英职。桑保袭堂兄隆职。（俱天顺间任。)(前千户所)正千户谢成永乐间任。谢福袭兄成职。谢荣袭兄福职。谢庆袭父荣职。谢英袭父庆职。景泰初任。副千户方玉宣德间任。方伟袭父玉职。方俊袭兄伟职。洪均由百户升。(上二人俱景泰间任。)洪清袭伯均职。天顺间任。百户丘忠鲁真邹喻(俱洪武间任。）王得保由总旗升。永乐间任。丘铺袭父忠职。邹斌袭父喻职。鲁瑄袭父真职。丘鉴袭父镛职。邹实袭堂兄斌职。鲁忠袭父瑄职。王顺袭父得保职。正统间任。鲁锐袭父忠职。丘福袭父鉴职。天顺间任。王佐袭父顺职。丘镇袭兄福职。邹荣袭父实职。鲁靖袭父锐职。(俱成化间任。)(后千户所)正千户王大永乐间任。康贵百户徐荣洪武间任。鲍斌罗镇徐成袭父荣职。(俱永乐间任。)罗海袭父镇职。鲍胜袭伯斌职。洪熙初任。徐鉴袭父成职。正统间任。罗升袭父海职。景泰初任。鲍昂袭兄胜职。徐璟袭父鉴职。(俱成化间任。)(建宁右卫指挥使司)指挥使高镛宣德间任。马隆吴杲张瑾仲德高淳袭父镛职。张铠袭父瑾职。指挥同知师镇洪熙初任。宫显由本卫金事升。杨泰由右所副干户升。景泰间任。师德袭父镇职。杨烨袭父泰职。(俱成化间任。)指挥金事徐义庞威(俱八闽通志洪武间任。)张子荣永乐间任。翟亮邵成(俱洪熙初任。)宫显邵铎袭父成职。翟兴袭父亮取。宣德间任。邵忠袭父铎职。邵旻袭父忠职。邵瑛袭兄旻职。镇抚胡□洪武间任。刘通永乐间任。胡敬胡彬袭父敬职。刘喜刘泰刘成化间任。（左千户所）正千户朱忠洪武间任。朱庸百户曹让焦中董成陈林(俱洪武间任。）焦谅袭中职[25]。董胜焦敬袭父谅职。焦建袭兄敬职。陈良保袭父林职。焦谦袭父建职。陈宗袭父秀保职。焦荣袭父谦职。陈泰袭兄宗职。夏贵景泰间任。刘铭天顺间任。董祐成化初任。（右千户所）副千户张福张灵官（俱由本所百户升。)张荣(俱永乐间任。）王原宣德间任。王英袭父原职。张仁袭灵宫职2。正统间任。杨泰裴敬由百户升。景泰间任。裴瑛袭父敬职。天顺间任。张胜袭父仁职。王庸袭叔英职。成化间任。百户蒋士进潘忠孙旺许盛张荣(俱洪武间调任。)张福刘智潘诚袭父忠职。朱铭张童袭父荣职。张灵宫袭兄童职。孙旺（俱永乐间任。）刘贵袭父智职。孙整袭父旺职。(...</p>
+</div>
+</article>
+<!-- Sidebar -->
+<aside class="lg:col-span-4 xl:col-span-4 space-y-8">
+<!-- AdSense Placeholder -->
+<div class="flex items-center justify-center rounded-lg border border-dashed border-charcoal/20 bg-charcoal/5 dark:border-slate-700 dark:bg-slate-800 p-4">
+<div class="h-[600px] w-[300px] flex flex-col items-center justify-center text-charcoal/40 dark:text-slate-500">
+<span class="text-xs font-semibold uppercase tracking-widest mb-2">Advertisement</span>
+<div class="h-32 w-32 rounded-full bg-charcoal/10 dark:bg-slate-700 mb-4 animate-pulse"></div>
+<p class="text-xs text-center max-w-[200px]">Support the preservation of digital history by visiting our sponsors.</p>
+</div>
+</div>
+<!-- Context Widget: Key Figures -->
+
+<div class="rounded-xl bg-white dark:bg-slate-800 shadow-sm border border-primary/10 dark:border-white/5 p-6">
+<h3 class="flex items-center gap-2 font-serif text-lg font-bold text-charcoal dark:text-white mb-4 border-b border-primary/10 pb-2">
+<span class="material-symbols-outlined text-primary">person_book</span>
+Key Figures
+</h3>
+<div class="space-y-4">
+
+<div class="group flex items-start gap-3 cursor-pointer">
+<div class="h-10 w-10 shrink-0 overflow-hidden rounded-full bg-primary/10">
+<span class="flex h-full w-full items-center justify-center text-primary font-serif font-bold">直</span>
+</div>
+<div>
+<h4 class="font-bold text-charcoal dark:text-slate-200 group-hover:text-primary transition-colors">直柔藻见</h4>
+<p class="text-xs text-charcoal/60 dark:text-slate-400">Historical Figure</p>
+</div>
+</div>
+
+<div class="group flex items-start gap-3 cursor-pointer">
+<div class="h-10 w-10 shrink-0 overflow-hidden rounded-full bg-primary/10">
+<span class="flex h-full w-full items-center justify-center text-primary font-serif font-bold">卿</span>
+</div>
+<div>
+<h4 class="font-bold text-charcoal dark:text-slate-200 group-hover:text-primary transition-colors">卿黄琮见</h4>
+<p class="text-xs text-charcoal/60 dark:text-slate-400">Historical Figure</p>
+</div>
+</div>
+
+<div class="group flex items-start gap-3 cursor-pointer">
+<div class="h-10 w-10 shrink-0 overflow-hidden rounded-full bg-primary/10">
+<span class="flex h-full w-full items-center justify-center text-primary font-serif font-bold">二</span>
+</div>
+<div>
+<h4 class="font-bold text-charcoal dark:text-slate-200 group-hover:text-primary transition-colors">二人俱见</h4>
+<p class="text-xs text-charcoal/60 dark:text-slate-400">Historical Figure</p>
+</div>
+</div>
+
+<div class="group flex items-start gap-3 cursor-pointer">
+<div class="h-10 w-10 shrink-0 overflow-hidden rounded-full bg-primary/10">
+<span class="flex h-full w-full items-center justify-center text-primary font-serif font-bold">张</span>
+</div>
+<div>
+<h4 class="font-bold text-charcoal dark:text-slate-200 group-hover:text-primary transition-colors">张光启见</h4>
+<p class="text-xs text-charcoal/60 dark:text-slate-400">Historical Figure</p>
+</div>
+</div>
+
+<div class="group flex items-start gap-3 cursor-pointer">
+<div class="h-10 w-10 shrink-0 overflow-hidden rounded-full bg-primary/10">
+<span class="flex h-full w-full items-center justify-center text-primary font-serif font-bold">王</span>
+</div>
+<div>
+<h4 class="font-bold text-charcoal dark:text-slate-200 group-hover:text-primary transition-colors">王十朋见</h4>
+<p class="text-xs text-charcoal/60 dark:text-slate-400">Historical Figure</p>
+</div>
+</div>
+
+</div>
+</div>
+
+<!-- Context Widget: Geographic Locations -->
+
+<div class="rounded-xl bg-white dark:bg-slate-800 shadow-sm border border-primary/10 dark:border-white/5 p-6">
+<h3 class="flex items-center gap-2 font-serif text-lg font-bold text-charcoal dark:text-white mb-4 border-b border-primary/10 pb-2">
+<span class="material-symbols-outlined text-primary">landscape</span>
+Geographic Locations
+</h3>
+<div class="flex flex-wrap gap-2">
+
+<a href="/search.html?q=建宁府" class="inline-flex items-center rounded-full bg-primary/5 px-3 py-1 text-xs font-medium text-primary ring-1 ring-inset ring-primary/20 hover:bg-primary hover:text-white transition-colors cursor-pointer">建宁府</a>
+
+<a href="/search.html?q=泉州府" class="inline-flex items-center rounded-full bg-primary/5 px-3 py-1 text-xs font-medium text-primary ring-1 ring-inset ring-primary/20 hover:bg-primary hover:text-white transition-colors cursor-pointer">泉州府</a>
+
+<a href="/search.html?q=兴化府" class="inline-flex items-center rounded-full bg-primary/5 px-3 py-1 text-xs font-medium text-primary ring-1 ring-inset ring-primary/20 hover:bg-primary hover:text-white transition-colors cursor-pointer">兴化府</a>
+
+</div>
+</div>
+
+<!-- Related Volumes -->
+
+<div class="rounded-xl bg-paper dark:bg-white/5 p-6">
+<h3 class="font-serif text-base font-bold text-charcoal/80 dark:text-slate-300 mb-3">Next in Collection</h3>
+
+<a href="/volume/卷33.html" class="block group mb-3" style="margin-bottom:0">
+<div class="flex items-center justify-between">
+<span class="text-sm font-medium text-charcoal group-hover:text-primary dark:text-slate-200 transition-colors">八闽通志</span>
+<span class="material-symbols-outlined text-sm text-charcoal/40 group-hover:text-primary transition-colors">arrow_forward</span>
+</div>
+<p class="mt-1 text-xs text-charcoal/50 dark:text-slate-500 line-clamp-2">本卷为《八闽志》记载涉及2个府级行政区划，描述山川地理。...</p>
+</a>
+
+</div>
+
+</aside>
+</div>
+</div>
+</main>
+<!-- Simple Footer -->
+<footer class="mt-auto border-t border-primary/10 bg-white py-12 dark:bg-background-dark dark:border-white/10">
+<div class="mx-auto max-w-7xl px-6 flex flex-col md:flex-row justify-between items-center gap-6">
+<div class="flex items-center gap-2">
+<div class="flex h-6 w-6 items-center justify-center rounded bg-charcoal text-white">
+<span class="material-symbols-outlined text-sm">history_edu</span>
+</div>
+<span class="font-serif font-bold text-charcoal dark:text-white">Ba Min Tong Zhi Digital Project</span>
+</div>
+<p class="text-sm text-charcoal/50 dark:text-slate-500">© 2024 Digital Humanities Lab. All rights reserved.</p>
+</div>
+</footer>
+<script>
+document.getElementById('searchInput').addEventListener('keypress', function(e) {
+    if (e.key === 'Enter') {
+        window.location.href = '/search.html?q=' + encodeURIComponent(this.value);
+    }
+});
+</script>
+</body>
+</html>

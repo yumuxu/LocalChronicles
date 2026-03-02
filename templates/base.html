@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>{{ title }}</title>
+    <meta name="description" content="{{ description }}">
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500;700;900&family=Noto+Serif+SC:wght@400;700&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#9f2d23",
+                        "background-light": "#FDFCF0",
+                        "background-dark": "#201412",
+                        "charcoal": "#2C2C2C",
+                        "paper": "#F7F5E8",
+                    },
+                    fontFamily: {
+                        "display": ["Public Sans", "sans-serif"],
+                        "serif": ["Noto Serif SC", "serif"],
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+    <style>
+        .texture-bg {
+            background-color: #FDFCF0;
+            background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%239f2d23' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+        }
+    </style>
+</head>
+<body class="texture-bg dark:bg-background-dark font-display text-charcoal dark:text-slate-100 min-h-screen flex flex-col">
+    <!-- Top Ad Placeholder -->
+    <div class="w-full bg-paper/50 dark:bg-background-dark/50 border-b border-primary/10 flex justify-center items-center py-2">
+        <div class="w-[728px] h-[90px] bg-neutral-200 dark:bg-neutral-800 flex items-center justify-center text-neutral-400 text-sm border border-neutral-300 dark:border-neutral-700 rounded-sm">
+            AdSense 728x90 Placeholder
+        </div>
+    </div>
+    <!-- Navigation Bar -->
+    <header class="sticky top-0 z-50 w-full backdrop-blur-md bg-background-light/80 dark:bg-background-dark/80 border-b border-primary/10 px-6 py-4">
+        <div class="max-w-7xl mx-auto flex items-center justify-between">
+            <div class="flex items-center gap-3 text-primary">
+                <div class="size-8 rounded-lg bg-primary/10 flex items-center justify-center text-primary">
+                    <span class="material-symbols-outlined text-xl">menu_book</span>
+                </div>
+                <h1 class="text-charcoal dark:text-white text-xl font-serif font-bold tracking-tight">八闽通志 <span class="text-sm font-display font-normal text-neutral-500 dark:text-neutral-400 ml-1">Digital Archive</span></h1>
+            </div>
+            <nav class="hidden lg:flex items-center gap-8">
+                <a class="text-charcoal hover:text-primary dark:text-slate-200 dark:hover:text-primary text-sm font-medium transition-colors" href="/">Home</a>
+                <a class="text-charcoal hover:text-primary dark:text-slate-200 dark:hover:text-primary text-sm font-medium transition-colors" href="/search.html">Smart Search</a>
+                <a class="text-charcoal hover:text-primary dark:text-slate-200 dark:hover:text-primary text-sm font-medium transition-colors" href="/library.html">43 Volumes</a>
+                <a class="text-charcoal hover:text-primary dark:text-slate-200 dark:hover:text-primary text-sm font-medium transition-colors" href="/articles.html">Historical Themes</a>
+            </nav>
+        </div>
+    </header>
+    <main class="flex-1 w-full max-w-7xl mx-auto px-6 py-10">
+        {% block content %}{% endblock %}
+    </main>
+    <footer class="bg-white dark:bg-neutral-900 border-t border-primary/10 mt-12 py-12 px-6">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between gap-8">
+            <div class="flex flex-col gap-4">
+                <div class="flex items-center gap-2 text-primary">
+                    <span class="material-symbols-outlined">menu_book</span>
+                    <span class="text-lg font-bold text-charcoal dark:text-white font-serif">八闽通志</span>
+                </div>
+                <p class="text-sm text-neutral-500 max-w-xs">
+                    A digital humanities project dedicated to preserving and analyzing the Ming Dynasty chronicle of Fujian.
+                </p>
+            </div>
+            <div class="flex gap-12 flex-wrap">
+                <div class="flex flex-col gap-3">
+                    <h5 class="font-bold text-charcoal dark:text-white text-sm uppercase tracking-wider">Archive</h5>
+                    <a class="text-sm text-neutral-500 hover:text-primary" href="/library.html">All Volumes</a>
+                    <a class="text-sm text-neutral-500 hover:text-primary" href="/search.html">Search</a>
+                </div>
+                <div class="flex flex-col gap-3">
+                    <h5 class="font-bold text-charcoal dark:text-white text-sm uppercase tracking-wider">Project</h5>
+                    <a class="text-sm text-neutral-500 hover:text-primary" href="/about.html">About Us</a>
+                </div>
+                <div class="flex flex-col gap-3">
+                    <h5 class="font-bold text-charcoal dark:text-white text-sm uppercase tracking-wider">Legal</h5>
+                    <a class="text-sm text-neutral-500 hover:text-primary" href="/privacy.html">Privacy Policy</a>
+                    <a class="text-sm text-neutral-500 hover:text-primary" href="/terms.html">Terms of Use</a>
+                </div>
+            </div>
+        </div>
+        <div class="max-w-7xl mx-auto border-t border-neutral-100 dark:border-neutral-800 mt-12 pt-8 text-center text-xs text-neutral-400">
+            © 2024 Ba Min Tong Zhi Digital Project. All rights reserved.
+        </div>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/fuse.js@7.0.0"></script>
+    {% block scripts %}{% endblock %}
+</body>
+</html>

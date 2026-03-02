@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+
+<html lang="zh-CN"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>八闽通志 - 八闽通志</title>
+<meta name="description" content="本卷为《八闽志》记载涉及4个府级行政区划，描述山川地理。">
+<link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500;700&family=Noto+Serif+SC:wght@400;700&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+        darkMode: "class",
+        theme: {
+            extend: {
+                colors: {
+                    "primary": "#9f2d23",
+                    "background-light": "#FDFCF0",
+                    "background-dark": "#201412",
+                    "charcoal": "#2C2C2C",
+                    "paper": "#F7F5E8",
+                    "ink": "#383838",
+                },
+                fontFamily: {
+                    "display": ["Public Sans", "sans-serif"],
+                    "serif": ["Noto Serif SC", "serif"],
+                },
+                borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+            },
+        },
+    }
+</script>
+<style>
+    .vertical-text {
+        writing-mode: vertical-rl;
+        text-orientation: mixed;
+    }
+</style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-ink dark:text-slate-200 font-display min-h-screen flex flex-col">
+<!-- Header -->
+<header class="sticky top-0 z-50 w-full border-b border-primary/10 bg-background-light/95 backdrop-blur dark:bg-background-dark/95">
+<div class="mx-auto flex h-16 max-w-7xl items-center justify-between px-6">
+<div class="flex items-center gap-6">
+<a class="flex items-center gap-3 text-charcoal dark:text-white group" href="/">
+<div class="flex h-8 w-8 items-center justify-center rounded bg-primary text-white transition-colors group-hover:bg-primary/90">
+<span class="material-symbols-outlined text-xl">auto_stories</span>
+</div>
+<h1 class="font-serif text-xl font-bold tracking-tight">八闽通志</h1>
+</a>
+<nav class="hidden md:flex items-center gap-6 text-sm font-medium text-charcoal/80 dark:text-slate-300">
+<a class="hover:text-primary transition-colors" href="/">Home</a>
+<a class="hover:text-primary transition-colors" href="/library.html">Volumes</a>
+<a class="hover:text-primary transition-colors" href="/search.html">Search</a>
+<a class="hover:text-primary transition-colors" href="/about.html">About</a>
+</nav>
+</div>
+<div class="flex items-center gap-4">
+<div class="relative hidden sm:block">
+<span class="absolute inset-y-0 left-0 flex items-center pl-3 text-primary/60">
+<span class="material-symbols-outlined text-lg">search</span>
+</span>
+<input id="searchInput" class="h-9 w-64 rounded-full border-none bg-primary/5 py-1 pl-10 pr-4 text-sm text-charcoal placeholder-primary/40 focus:ring-1 focus:ring-primary dark:bg-white/10 dark:text-white" placeholder="Search volumes..." type="text"/>
+</div>
+</div>
+</div>
+</header>
+<!-- Main Content -->
+<main class="flex-1">
+<div class="mx-auto max-w-7xl px-6 py-8">
+<!-- Breadcrumbs -->
+<nav class="mb-8 flex items-center text-sm text-charcoal/60 dark:text-slate-400">
+<a class="hover:text-primary hover:underline" href="/library.html">Library</a>
+<span class="mx-2 text-primary/40">/</span>
+<a class="hover:text-primary hover:underline" href="#">Fujian Provincial Chronicles</a>
+<span class="mx-2 text-primary/40">/</span>
+<span class="font-medium text-charcoal dark:text-slate-200">八闽通志</span>
+</nav>
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
+<!-- Main Reader Column -->
+<article class="lg:col-span-8 xl:col-span-8">
+<!-- Title Section -->
+<div class="mb-10 border-b border-primary/10 pb-6">
+<div class="flex items-start justify-between">
+<div>
+<span class="mb-2 inline-block rounded bg-primary/10 px-2 py-0.5 text-xs font-semibold uppercase tracking-wider text-primary">Historical</span>
+<h1 class="font-serif text-4xl font-bold text-charcoal dark:text-white leading-tight mb-2">八闽通志</h1>
+<p class="text-charcoal/60 dark:text-slate-400 text-lg"></p>
+</div>
+<div class="flex gap-2">
+<button class="p-2 text-charcoal/60 hover:text-primary hover:bg-primary/5 rounded-full transition-colors" title="Bookmark">
+<span class="material-symbols-outlined">bookmark</span>
+</button>
+<button class="p-2 text-charcoal/60 hover:text-primary hover:bg-primary/5 rounded-full transition-colors" title="Print">
+<span class="material-symbols-outlined">print</span>
+</button>
+<button class="p-2 text-charcoal/60 hover:text-primary hover:bg-primary/5 rounded-full transition-colors" title="Share">
+<span class="material-symbols-outlined">share</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Modern Summary Box -->
+
+<div class="mb-12 overflow-hidden rounded-lg bg-paper border border-primary/5 dark:bg-white/5 dark:border-white/10 shadow-sm">
+<div class="flex flex-col md:flex-row">
+<div class="relative h-48 w-full md:h-auto md:w-1/3 overflow-hidden">
+<div class="absolute inset-0 bg-cover bg-center" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuC-JGvQVHWmyNh7BUJXeT_74AzCgoUabelktaqDxrls3BqnpHMpc_5BYJqJLXvUfKEYuZY9gst8zu-MIlD3sR9ooO49hcxWbJSuZmBkbaqWwxC5B3zY_sMxEi3ac2MoVMjygAp-r-qfNXuDZnO7xZbuEJbgHq0SA4vM680yacuWFGAif5JAeDZ-SVtv58P6V-UqxVCxN3amajxNe7_KWc9PSh1xnmVTl9puKpAapRMkDabnEoDAy5o-P-aARRYaRwMrvsHfLGkV85A');"></div>
+<div class="absolute inset-0 bg-primary/10 mix-blend-multiply"></div>
+</div>
+<div class="p-6 md:w-2/3">
+<h3 class="mb-2 flex items-center gap-2 font-serif text-lg font-bold text-primary">
+<span class="material-symbols-outlined text-lg">summarize</span>
+Modern Summary
+</h3>
+<p class="text-base leading-relaxed text-charcoal/80 dark:text-slate-300">
+本卷为《八闽志》记载涉及4个府级行政区划，描述山川地理。
+</p>
+</div>
+</div>
+</div>
+
+<!-- Main Text Content -->
+<div class="prose prose-lg max-w-none font-serif text-ink dark:text-slate-200">
+<p class="leading-loose mb-6 text-lg text-charcoal/90 dark:text-slate-300">八闽通志卷之十八地理桥梁建宁府松溪县惠政桥宋绍兴五年，邑人李时安、李自南建，名平政。后坛于水。十六年，僧圆端募缘重建。淳熙十三年又圮于水。邑士刘无言鬻田倡建，迭石为六址，高五丈许，而梁其上，并覆以亭，凡三十二间。淳祐间，邑人李援之修，徐清叟改今名，后复圮。国朝永乐七年，邑士徐文锡重修。正统六年，主簿马平、王伟命僧会普载、僧妙能、耆老严孔章募众重建。报恩桥洪武三十四年，邑人范文正建。永泰桥旧关口渡也。宋嘉定间，县令何宗稷建，后坏于水。国朝永乐十三年，里人胡仲达募众重建，寻圮。正统二年，义民夙士达捐资重建，而里人李子渊及僧祖方助成之。(上三桥在县治东。）西山桥在县治西。元至正三年，道士谢德山建，后圮。国朝永乐十二年，邑人夙均亮募众重建。南门八闽通志桥在县南。洪武三年知县常钦祖建，后坏于水。永乐十三年，邑人艾仲完募众移建上流，后复坏于水。正统三年，义民夙希达重建。通济桥旧名故县桥，古县渡也。宋庆元二年县令林俊卿建，后圮于水。国朝洪武十八年，龙泉沈仲善、杨象募众累石布木重建。永乐五年毁。正统九年，教谕张湜、巡检闻尹捐俸倡，邑人潘祖述、僧会吉祥等，募众复建.长五十六丈，上覆以屋，改今名。张湜为记。陂塘桥洪武三年邑人范文正建。构亭九楹于其上。水口桥景泰五年僧永敬募众重建，上覆以亭。中峰桥洪武九年僧有铭建，后毁。永乐十五年僧志清重建。师姑桥洪武八年里人夏二建。新坑桥洪武八年里人叶彦百建。独石桥洪武二十九年僧本祥募众建。山头桥洪武三十二年知县钦恭建1。化成桥洪武三十一年僧有铭建。华墩桥永乐九年邑人艾完募众建。景泰七年僧永敬重修。（上十桥俱在县东皈伏里。）官桥元至正十三年，僧净斋建。国朝永乐八年邑人张旺四重建。庵溪桥洪武二年僧肃翁建，寻毁。永乐十七年，邑人张琅募众重建。东梨桥洪武二十六年建，后记。永乐十七年邑人张琅募众重建。桐源桥洪武二十一年邑人连子忠建。钱园桥成化十八年僧善庆募众重建。杉溪桥宋邑人李思建，中丞吴执中为记。建炎间灾，邑人吴岩夫重建。岩夫，中丞之子也。（上六桥在县西杉溪里。）乐平桥元至正三年里人叶士荣建。国朝永乐四年，里人刘和募众重建。凌清桥元至正十八年，里人张为恭募众建，后记。国朝永乐七年，里人张义募众重建。乘驷桥又名峡桥，宋建炎间建，后记。绍兴末，里人黄明重建，复记。至隆兴间，复倾家资万缗成之。又为洪水所圮。国朝宣德三年，县丞蒋继成劝义民夙希达捐资累石重建。越四年又圮。正统元年复建，上覆以屋。黄元公为记。范山桥洪武中建，后为洪水所坏。洪熙元年义民夙希达卷之十八地理重建。魏屯桥正统六年义民夙希达重建。后宅桥旧在县南二里许，后圮于水。正统六年，义民夙希达移建今所。龙津桥正统八年，僧吉祥建。窑场桥“窝”一作“窑”。登云桥(上二桥俱元至正间邑人范文正建。）通驷桥元至正九年邑人叶彦祥建。国朝永乐十一年，其孙昭募众重建。黄淡桥元至正十七年，邑人范文正、道人薛居洲建。大洋桥元至正十七年，道士谢德山重建。国朝永乐八年，邑人夙均亮重修。镇平桥永乐八年，道士吕仲章募众建。漆桥元至正十八年，邑人张必恭募众建。国朝洪武八年，里人黄正甫重修。茭阳桥正统十三年。里人魏道顺、刘希杰、魏宗育建。德政桥元至正元年，邑人叶德盛、李定光建。国朝洪武五年，僧永寿募众重修。万石桥元至治二年，邑人叶德盛建，后圮，国朝永乐九年，其孙廷坚重修。会春桥洪武五年僧永寿募众重建。聚宝桥宋咸淳间刘能定建。国朝永乐六年，其孙和募众重建，十三年，耆老刘东复修。（上一十九桥俱在县南东关里。）化龙桥大仙桥南山桥(上三桥俱洪武间僧本祥募众建。）渡头桥洪武十二年，里人蔡贵三募众建。李墩桥洪武十二年，邑人程游父募众建。龙首桥洪武十二年，邑人严文胜建。峡口桥正统八年，里人程文立建。(上七桥在永宁里。)船坑桥元至正五年僧有通建，后记于水。国朝永乐九年，道士魏觉成重建。峰尾桥洪武二十一年，邑人范希德募众建。横山桥洪武二十五年，邑人叶进山募众建。通宵桥元至正三年，邑人龚德用募众建。一席桥元至正二十一年，邑人范惟正、道士薛居洲建。石桥元至正十七年，邑人范惟正、道士薛居洲建。(上六桥在庆元里。)宦门桥杉坑桥(上二桥俱洪武间邑人孔鹿募众建。）高仓桥永乐五年，邑人孔牛募众建。高路八闽通志桥永乐六年，邑人孔师姑募众建。(上四桥在永和里。)东门桥正统五年，邑人游绍、僧普定建。下保桥元至正六年，邑人吴谷叶建，后圮于水。国朝正统二年，邑人游绍、僧普定重建。溪东桥元至正三年，巡检毛明善建，后毁。国朝正统元年，邑人严海、僧元因募众建。铁总桥元至正间建，后为洪水所圮。国朝永乐十年，里人谢荣重建。衢口桥洪武十一年，邑人巡检徐勋建。詹源桥元至正间建。国朝宣德五年，僧正因重修。后村桥洪武十九年，邑人严均、田畴建。黄塚桥洪武三十年，道士正觉建，后圮于水。永乐十九年，邑人李仁甫募众重建。正统元年，僧正因复建。西山桥永乐九年，李思敬募众建。正统十二年，邑人游绍、李善殷重修。（上九桥在豪田里。以上二十六桥俱县北。）新兴渡在县东皈伏里。按郡志旧有济美桥，宋淳熙间建，为水所坏。今复为渡。龙津渡在县西杉溪里夙屯。溪乾渡在济美庙前。水南渡(上二渡在县南东关里。）崇安县继贤桥在县南待贤坊。宋时建，旧名“昼锦”，因中丞翁彦国、枢密刘琪居桥东，故名。又名忠族，又名青云。初在宣化坊之左，后圮于水。县令赵彦绳议复之，功未半而坏。嘉定间，县令赵必愿移建今所，改今名。元至正十三年毁于兵。越十年，达鲁花赤道奴等重建。至大二年又圮于永。至正三年，县尹吴世重复修建。国朝永乐中又毁。成化十七年，邑民范勋等白于金事高崧、谈俊，檄同知李明、知县徐衍规划重新。广福桥在县北一里许。初名德星，后改名济川，又改名慈济。宋端平间县令章端子建，后记。景定间县令刘汉海重建，改今名。元泰定二年，县尹彭好古悉撤而新之，后复圮。国朝成化十八年，邑民暨煜捐白卷之十八地理金一千两、范勋捐白金二百两为倡，白于按察司金事高崧、谈俊，檄同知李明、知县徐衍重建。望星桥邑人彭慈建。水尾桥客岭桥营岭桥(上三桥俱元时建。)祝公桥程溪桥邑人丁用贞重建。(以上八桥俱在四隅里。）冠带桥清晖桥大保桥古楼桥里人穆伯衡重建。取履桥(上五桥在上梅里。)昼锦桥观象桥旁有观泉亭。（上二桥俱知县曹端重建。）黄石桥宋徐清叟书匾，僧达源重建。（上三桥在从籍里，俱宋时建。）清沟桥知县曹端建。拱辰桥僧玉山修。双桥里人许产恭[5]建。交溪桥里人钱日新重修。红桥会仙桥朱文公书匾。（上五桥俱宋时建。）玉虹桥石鼓溪桥忠文桥旧名舍人，里人刘恒重建，改今名。野耕桥西济桥月溪桥菀水桥(上二桥俱宋胡寅书匾。)回澜桥宋蔡抗书匾。(上一十四桥在外五夫里。以上二十二桥俱县东。）永济桥宋时建。独坑桥中和桥旧名存心。（上二桥俱邑人暨孟舟重建。)黄伯路口桥彭九歧桥(上二桥俱元时建。)黄隆桥(以上大桥俱在县西黄伯里。)徐公桥宋时建。蓝涧桥又县西南将村里亦有蓝涧桥，知县曹端建。长谷泷桥平水庙前桥三姑桥南原桥井水桥店尾桥双溪桥小通仙桥李田桥南阳桥江师桥茅岭桥范墩桥(上十四桥俱元时建。)梯云桥通仙桥梅溪桥赤石浮桥存心桥邑人王季贤重建。(上二十桥在会仙里。)双峡桥宋刘子翚为记。上蓝桥亦名花桥。虎鼻桥(上三桥在建平里。以上二十四桥俱县南。)新丰桥黎口桥(上二桥俱宋时建。)客苦桥(上三桥在石白里。）通济桥又名大王桥，知县曹端建。黄石桥又名陈公桥，道士俞觉善建。南埂桥升仙桥陈公西八闽通志桥南安桥(上四桥俱宋时建。)第一桥第二桥上虹桥钓月桥坑口桥风门凹桥南岭桥铺头桥又县西南将村里亦有铺头桥，元时建。小浆桥杜畬桥横山桥禾岭桥举富桥彭畬桥栈头桥李献桥南山桥村尾桥飞桥狮岭桥栈下桥羊栈桥窑前桥又县西南将村里亦有窑前桥，元时建。塚前桥登云桥双溪桥路口桥翠田桥黄溪桥为政桥元至大间，溪流瀑溢，驿路诸溪桥及渡俱漂荡断绝，里人魏文遂随山刈榛，别开一径，自为政桥以达大路，捷于驿路五里。猪子岩桥(上三十一桥俱元时建。）下麦坑桥邑人吴汝清重建。继祖桥旧名惠政，俗呼第三渡。宋赵必愿之祖汝愚帅闽日，尝疆曰“里仁”。后必愿来为宰，道出此桥，改今名。里仁桥俗呼第四渡。太平西桥俗呼第一渡。知县林均瑞建。第五渡桥宋县令陆珪建，里人张牖迁今所。巨济桥俗呼第二渡。干溪桥（上四十四桥在石雄里。已上四十七桥俱县北。）潺溪桥里人程伯衡重建。忠孝桥宋时建。牛皮滩桥(上三桥在下梅里。)芦山桥元时建。旧名云山。知县曾端重建。黄亭桥宋时建。虹桥知县曹端建，又县南会仙里亦有虹桥，元时建。太平桥杨田桥知县曹端建。(上五桥在丰阳里。已上八桥俱县东南。）乘驱桥里人吕支山建。后溪桥马鞍山桥元时建。（上三桥在将村里。)望仙桥在长平里。里人张伯畴募众建。福庆桥里人蔡八建。德博桥里人游伯林募众建。（上二桥在节和里。已上六桥俱县西南。）虎溪桥旧名历，僧与梅建、邑人王景明重建。浴冰桥僧宗乙建，僧立明重建。扣冰桥宋和冰禅师建，建炎间赐额。七星桥里人吴仕恭建。（上四桥在吴屯里。）跃龙桥驷归桥(上二桥俱宋卷之十八地理时建。)塔下桥下廊桥(上二桥俱里人陈子纯重建。已上四桥在大浑里。)双旌桥宋中丞翁彦国还家，而桥适成。因名。魁星桥仙洲桥湘灵桥观澜桥泰原桥步仙桥谷城黄铁书匾。(上七桥俱宋时建。）湖塘桥邑人吴汝舟建。（上八桥在内五夫里。已上一十六桥俱县东北。）平川桥旧名溪南，后改今名。朱文公书匾。升天桥杜青碧书匾。阔利桥(上三桥在县西北周村里。）赤石渡旧有浮桥，圮于水。梅溪渡旧有桥，圮于水。石鼓渡(上三渡俱在县南会仙里。)政和县星溪桥在县治前。宋建，名县前桥。元至正七年邑人范同重建，改名德政，后圮于水。国朝永乐十五年，知县傅王润命耆老申伯任等募众重建，改今名。正统十二年，毁于寇。景泰四年，知县顾让命耆老林文锐、僧无碍等募众重建。天顺二年复毁。知县王鉴命耆老张惟信等募众重建。英祐桥即旧西门渡也。成化十九年，邑人训导吴宪募众建，教谕石辉为记。通津桥旧名步赢桥。正统五年知县江显建。（上三桥俱县治西。）附凤桥旧名考口，在县治南。宋时建。国朝景泰五年，僧伯庄募众重建。黄岭坑桥魏屯桥宋绍兴间僧铭庵建，后圮于水。国朝永乐十一年，主簿石彦章募众重建。筹坑桥牛犊桥南溪屯洋桥党远口桥(上七桥俱在县东政和南里。）西山桥东林桥和安桥宋乾道间建，邵知柔为记。后废为渡，名西津渡。平景桥成化十三年里人吴景宗等建。石牌界桥(上五桥在县西长城里。）林屯桥茶岭口桥苦竹洲桥下宅桥虎啸岭根桥观定桥旧名都护。天顺间，邑人张八闽通志惟信、僧普赞等重建。斧源口桥斧桥驻节桥包源桥下坑桥(上二桥俱宋时建。)刚武桥浆口桥赤岩坑桥(上十四桥在东衢里）关隶镇前桥三字桥李溪桥牛迹洋桥下源桥苦竹衡前桥东平庙前桥盖竹溪桥丰寿桥北坑桥下桥浆口转水桥后门村桥溪边村头桥横坑桥苦竹源佛堂前桥茶溪桥黎垟口桥柘垟桥(上一十九桥在政和西里。已上三十三桥俱县南。）鸡木岭桥石门桥（上二桥在县西南高宅里。）风口桥东峰桥旧名步云桥。景泰五年，僧宗实募众重建。万岁桥池坑桥(上四桥在感化上里。)长岭根桥延福桥资福桥庆元界新桥桃源冈上桥宫峡口桥花光桥(上七桥在感化下里。已上十一桥俱县东北。)山表花桥后田桥常口桥界溪桥浆山口桥官山桥新溪桥范源桥梅屯桥新村桥(上十桥俱在县西北东平里。）瀛口渡在东衢里。官陂渡在高宅里。（上二渡俱县西。）寿宁县东和桥在县治东。天顺元年，邑人叶伯铭、韦荣进、陈伯铭、叶斯拱建。西城桥在县治西。正统十三年邑人吴永忠等建。阜民桥在县治南。天顺二年县丞李真、主簿史立正建。珠涧桥在县治西南。天顺八年知县沈能建。小托桥头桥七星桥(上三桥在县西。)三澄桥在县南。天顺七年邑人叶留芳等建。大安桥后段桥天顺七年，县丞李贞建。(上二桥在县北。上六桥俱在坊隅。）犀溪福寿桥新桥翁坑桥东溪桥(上四桥在福安里一都。）新丰龙就桥在福卷之十八地理安里二都。(已上五桥俱县东。)平津桥洋尾桥南溪桥南源桥许屯桥柯洋长春桥(上六桥在县西政和里八都。）鱼溪花岭迎仙桥阳边吕中桥溪南普济桥(上三桥在福安里三都。)东坑桥三岛坑桥(上二桥在福安里四都。已上五桥俱县东南。）双干桥周墩桥可涧桥板尾桥花销桥禾溪澄明桥红桥(上七桥在县西南政和里七都。)横渡桥通济桥风竹普济桥(上三桥在政和里九都。）飞虹桥天顺七年义民黄普要建。群阳桥天顺七年，里人黄彦荣、黄思聪等建。尤溪桥天顺...</p>
+</div>
+</article>
+<!-- Sidebar -->
+<aside class="lg:col-span-4 xl:col-span-4 space-y-8">
+<!-- AdSense Placeholder -->
+<div class="flex items-center justify-center rounded-lg border border-dashed border-charcoal/20 bg-charcoal/5 dark:border-slate-700 dark:bg-slate-800 p-4">
+<div class="h-[600px] w-[300px] flex flex-col items-center justify-center text-charcoal/40 dark:text-slate-500">
+<span class="text-xs font-semibold uppercase tracking-widest mb-2">Advertisement</span>
+<div class="h-32 w-32 rounded-full bg-charcoal/10 dark:bg-slate-700 mb-4 animate-pulse"></div>
+<p class="text-xs text-center max-w-[200px]">Support the preservation of digital history by visiting our sponsors.</p>
+</div>
+</div>
+<!-- Context Widget: Key Figures -->
+
+<div class="rounded-xl bg-white dark:bg-slate-800 shadow-sm border border-primary/10 dark:border-white/5 p-6">
+<h3 class="flex items-center gap-2 font-serif text-lg font-bold text-charcoal dark:text-white mb-4 border-b border-primary/10 pb-2">
+<span class="material-symbols-outlined text-primary">person_book</span>
+Key Figures
+</h3>
+<div class="space-y-4">
+
+<div class="group flex items-start gap-3 cursor-pointer">
+<div class="h-10 w-10 shrink-0 overflow-hidden rounded-full bg-primary/10">
+<span class="flex h-full w-full items-center justify-center text-primary font-serif font-bold">隆</span>
+</div>
+<div>
+<h4 class="font-bold text-charcoal dark:text-slate-200 group-hover:text-primary transition-colors">隆乾</h4>
+<p class="text-xs text-charcoal/60 dark:text-slate-400">Historical Figure</p>
+</div>
+</div>
+
+<div class="group flex items-start gap-3 cursor-pointer">
+<div class="h-10 w-10 shrink-0 overflow-hidden rounded-full bg-primary/10">
+<span class="flex h-full w-full items-center justify-center text-primary font-serif font-bold">及</span>
+</div>
+<div>
+<h4 class="font-bold text-charcoal dark:text-slate-200 group-hover:text-primary transition-colors">及康熙</h4>
+<p class="text-xs text-charcoal/60 dark:text-slate-400">Historical Figure</p>
+</div>
+</div>
+
+<div class="group flex items-start gap-3 cursor-pointer">
+<div class="h-10 w-10 shrink-0 overflow-hidden rounded-full bg-primary/10">
+<span class="flex h-full w-full items-center justify-center text-primary font-serif font-bold">民</span>
+</div>
+<div>
+<h4 class="font-bold text-charcoal dark:text-slate-200 group-hover:text-primary transition-colors">民国</h4>
+<p class="text-xs text-charcoal/60 dark:text-slate-400">Historical Figure</p>
+</div>
+</div>
+
+<div class="group flex items-start gap-3 cursor-pointer">
+<div class="h-10 w-10 shrink-0 overflow-hidden rounded-full bg-primary/10">
+<span class="flex h-full w-full items-center justify-center text-primary font-serif font-bold">按</span>
+</div>
+<div>
+<h4 class="font-bold text-charcoal dark:text-slate-200 group-hover:text-primary transition-colors">按康熙</h4>
+<p class="text-xs text-charcoal/60 dark:text-slate-400">Historical Figure</p>
+</div>
+</div>
+
+<div class="group flex items-start gap-3 cursor-pointer">
+<div class="h-10 w-10 shrink-0 overflow-hidden rounded-full bg-primary/10">
+<span class="flex h-full w-full items-center justify-center text-primary font-serif font-bold">乾</span>
+</div>
+<div>
+<h4 class="font-bold text-charcoal dark:text-slate-200 group-hover:text-primary transition-colors">乾隆</h4>
+<p class="text-xs text-charcoal/60 dark:text-slate-400">Historical Figure</p>
+</div>
+</div>
+
+</div>
+</div>
+
+<!-- Context Widget: Geographic Locations -->
+
+<div class="rounded-xl bg-white dark:bg-slate-800 shadow-sm border border-primary/10 dark:border-white/5 p-6">
+<h3 class="flex items-center gap-2 font-serif text-lg font-bold text-charcoal dark:text-white mb-4 border-b border-primary/10 pb-2">
+<span class="material-symbols-outlined text-primary">landscape</span>
+Geographic Locations
+</h3>
+<div class="flex flex-wrap gap-2">
+
+<a href="/search.html?q=建宁府" class="inline-flex items-center rounded-full bg-primary/5 px-3 py-1 text-xs font-medium text-primary ring-1 ring-inset ring-primary/20 hover:bg-primary hover:text-white transition-colors cursor-pointer">建宁府</a>
+
+<a href="/search.html?q=漳州府" class="inline-flex items-center rounded-full bg-primary/5 px-3 py-1 text-xs font-medium text-primary ring-1 ring-inset ring-primary/20 hover:bg-primary hover:text-white transition-colors cursor-pointer">漳州府</a>
+
+<a href="/search.html?q=汀州府" class="inline-flex items-center rounded-full bg-primary/5 px-3 py-1 text-xs font-medium text-primary ring-1 ring-inset ring-primary/20 hover:bg-primary hover:text-white transition-colors cursor-pointer">汀州府</a>
+
+<a href="/search.html?q=泉州府" class="inline-flex items-center rounded-full bg-primary/5 px-3 py-1 text-xs font-medium text-primary ring-1 ring-inset ring-primary/20 hover:bg-primary hover:text-white transition-colors cursor-pointer">泉州府</a>
+
+</div>
+</div>
+
+<!-- Related Volumes -->
+
+<div class="rounded-xl bg-paper dark:bg-white/5 p-6">
+<h3 class="font-serif text-base font-bold text-charcoal/80 dark:text-slate-300 mb-3">Next in Collection</h3>
+
+<a href="/volume/卷19.html" class="block group mb-3" style="margin-bottom:0">
+<div class="flex items-center justify-between">
+<span class="text-sm font-medium text-charcoal group-hover:text-primary dark:text-slate-200 transition-colors">八闽通志</span>
+<span class="material-symbols-outlined text-sm text-charcoal/40 group-hover:text-primary transition-colors">arrow_forward</span>
+</div>
+<p class="mt-1 text-xs text-charcoal/50 dark:text-slate-500 line-clamp-2">本卷为《八闽志》记载涉及3个府级行政区划，描述山川地理。...</p>
+</a>
+
+</div>
+
+</aside>
+</div>
+</div>
+</main>
+<!-- Simple Footer -->
+<footer class="mt-auto border-t border-primary/10 bg-white py-12 dark:bg-background-dark dark:border-white/10">
+<div class="mx-auto max-w-7xl px-6 flex flex-col md:flex-row justify-between items-center gap-6">
+<div class="flex items-center gap-2">
+<div class="flex h-6 w-6 items-center justify-center rounded bg-charcoal text-white">
+<span class="material-symbols-outlined text-sm">history_edu</span>
+</div>
+<span class="font-serif font-bold text-charcoal dark:text-white">Ba Min Tong Zhi Digital Project</span>
+</div>
+<p class="text-sm text-charcoal/50 dark:text-slate-500">© 2024 Digital Humanities Lab. All rights reserved.</p>
+</div>
+</footer>
+<script>
+document.getElementById('searchInput').addEventListener('keypress', function(e) {
+    if (e.key === 'Enter') {
+        window.location.href = '/search.html?q=' + encodeURIComponent(this.value);
+    }
+});
+</script>
+</body>
+</html>

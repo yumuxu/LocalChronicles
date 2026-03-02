@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+
+<html lang="zh-CN"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>八闽通志 - 八闽通志</title>
+<meta name="description" content="本卷为《八闽志》记载涉及3个府级行政区划，描述山川地理。">
+<link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500;700&family=Noto+Serif+SC:wght@400;700&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+        darkMode: "class",
+        theme: {
+            extend: {
+                colors: {
+                    "primary": "#9f2d23",
+                    "background-light": "#FDFCF0",
+                    "background-dark": "#201412",
+                    "charcoal": "#2C2C2C",
+                    "paper": "#F7F5E8",
+                    "ink": "#383838",
+                },
+                fontFamily: {
+                    "display": ["Public Sans", "sans-serif"],
+                    "serif": ["Noto Serif SC", "serif"],
+                },
+                borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+            },
+        },
+    }
+</script>
+<style>
+    .vertical-text {
+        writing-mode: vertical-rl;
+        text-orientation: mixed;
+    }
+</style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-ink dark:text-slate-200 font-display min-h-screen flex flex-col">
+<!-- Header -->
+<header class="sticky top-0 z-50 w-full border-b border-primary/10 bg-background-light/95 backdrop-blur dark:bg-background-dark/95">
+<div class="mx-auto flex h-16 max-w-7xl items-center justify-between px-6">
+<div class="flex items-center gap-6">
+<a class="flex items-center gap-3 text-charcoal dark:text-white group" href="/">
+<div class="flex h-8 w-8 items-center justify-center rounded bg-primary text-white transition-colors group-hover:bg-primary/90">
+<span class="material-symbols-outlined text-xl">auto_stories</span>
+</div>
+<h1 class="font-serif text-xl font-bold tracking-tight">八闽通志</h1>
+</a>
+<nav class="hidden md:flex items-center gap-6 text-sm font-medium text-charcoal/80 dark:text-slate-300">
+<a class="hover:text-primary transition-colors" href="/">Home</a>
+<a class="hover:text-primary transition-colors" href="/library.html">Volumes</a>
+<a class="hover:text-primary transition-colors" href="/search.html">Search</a>
+<a class="hover:text-primary transition-colors" href="/about.html">About</a>
+</nav>
+</div>
+<div class="flex items-center gap-4">
+<div class="relative hidden sm:block">
+<span class="absolute inset-y-0 left-0 flex items-center pl-3 text-primary/60">
+<span class="material-symbols-outlined text-lg">search</span>
+</span>
+<input id="searchInput" class="h-9 w-64 rounded-full border-none bg-primary/5 py-1 pl-10 pr-4 text-sm text-charcoal placeholder-primary/40 focus:ring-1 focus:ring-primary dark:bg-white/10 dark:text-white" placeholder="Search volumes..." type="text"/>
+</div>
+</div>
+</div>
+</header>
+<!-- Main Content -->
+<main class="flex-1">
+<div class="mx-auto max-w-7xl px-6 py-8">
+<!-- Breadcrumbs -->
+<nav class="mb-8 flex items-center text-sm text-charcoal/60 dark:text-slate-400">
+<a class="hover:text-primary hover:underline" href="/library.html">Library</a>
+<span class="mx-2 text-primary/40">/</span>
+<a class="hover:text-primary hover:underline" href="#">Fujian Provincial Chronicles</a>
+<span class="mx-2 text-primary/40">/</span>
+<span class="font-medium text-charcoal dark:text-slate-200">八闽通志</span>
+</nav>
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
+<!-- Main Reader Column -->
+<article class="lg:col-span-8 xl:col-span-8">
+<!-- Title Section -->
+<div class="mb-10 border-b border-primary/10 pb-6">
+<div class="flex items-start justify-between">
+<div>
+<span class="mb-2 inline-block rounded bg-primary/10 px-2 py-0.5 text-xs font-semibold uppercase tracking-wider text-primary">Historical</span>
+<h1 class="font-serif text-4xl font-bold text-charcoal dark:text-white leading-tight mb-2">八闽通志</h1>
+<p class="text-charcoal/60 dark:text-slate-400 text-lg"></p>
+</div>
+<div class="flex gap-2">
+<button class="p-2 text-charcoal/60 hover:text-primary hover:bg-primary/5 rounded-full transition-colors" title="Bookmark">
+<span class="material-symbols-outlined">bookmark</span>
+</button>
+<button class="p-2 text-charcoal/60 hover:text-primary hover:bg-primary/5 rounded-full transition-colors" title="Print">
+<span class="material-symbols-outlined">print</span>
+</button>
+<button class="p-2 text-charcoal/60 hover:text-primary hover:bg-primary/5 rounded-full transition-colors" title="Share">
+<span class="material-symbols-outlined">share</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Modern Summary Box -->
+
+<div class="mb-12 overflow-hidden rounded-lg bg-paper border border-primary/5 dark:bg-white/5 dark:border-white/10 shadow-sm">
+<div class="flex flex-col md:flex-row">
+<div class="relative h-48 w-full md:h-auto md:w-1/3 overflow-hidden">
+<div class="absolute inset-0 bg-cover bg-center" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuC-JGvQVHWmyNh7BUJXeT_74AzCgoUabelktaqDxrls3BqnpHMpc_5BYJqJLXvUfKEYuZY9gst8zu-MIlD3sR9ooO49hcxWbJSuZmBkbaqWwxC5B3zY_sMxEi3ac2MoVMjygAp-r-qfNXuDZnO7xZbuEJbgHq0SA4vM680yacuWFGAif5JAeDZ-SVtv58P6V-UqxVCxN3amajxNe7_KWc9PSh1xnmVTl9puKpAapRMkDabnEoDAy5o-P-aARRYaRwMrvsHfLGkV85A');"></div>
+<div class="absolute inset-0 bg-primary/10 mix-blend-multiply"></div>
+</div>
+<div class="p-6 md:w-2/3">
+<h3 class="mb-2 flex items-center gap-2 font-serif text-lg font-bold text-primary">
+<span class="material-symbols-outlined text-lg">summarize</span>
+Modern Summary
+</h3>
+<p class="text-base leading-relaxed text-charcoal/80 dark:text-slate-300">
+本卷为《八闽志》记载涉及3个府级行政区划，描述山川地理。
+</p>
+</div>
+</div>
+</div>
+
+<!-- Main Text Content -->
+<div class="prose prose-lg max-w-none font-serif text-ink dark:text-slate-200">
+<p class="leading-loose mb-6 text-lg text-charcoal/90 dark:text-slate-300">八闽通志卷之五地理山川福州府福清县鹫峰山在北隅。乃县治后来龙之山也。五代汉乾祐三年，有异禽来集，五色炳焕。或日此灵鹫也，因以名山。上有鹫峰。海坛山在县东南大海中。南北长，东西狭，周遭七百里，居民布散，村落不一。南日黄崎、紫兰牧、上砦头、小鳌网、大鳌网、沉头、大场、小场、游头、钱藏；西日水马山、霸前、金崎头；北日苏澳、钟门、沙溪；东日浚门、獭步、军山、流水、广州埕。山势远望如坛，故名。洪武二十年，以倭寇猝难备御，尽徙其民于县，至今尚有遗畜，自相孕育。网山自海口西行可三里。民居皆业渔，故名。宋林奕之尝作亭，读书其上，直曰“月鱼”，学者因号网山先生。邑宰范处义尝问网山好处。奕之云：“最好是此山，但无读书家”。瑞岩山山之岩洞多幽雅奇秀。佛窟岩。天章岩。香山八闽通志洞。林诚仲诗：“瑞气拥岩峦，中有神仙宅；世代几消沉，溪山自今昔。”天台洞。宋刘克庄诗：“崭崭岩石畔，别有一天台；不见桃花水，刘晨莫妄来。”玉虚洞。元林泉生诗：“空谷结层云，寒泉落空沼，中有太古灵，悠然隔深窗。”桃花园。休休台。醉石。鉴池。陈曾诗：“波澄涵远碧，云净见天光，欲问源头水，令人忆紫阳。”仙人井。其水随海潮盈缩，又名通海井。林诚仲诗：“绝顶有渊源，人言脉通海；潮汐验盈虚，小以觇其大。”一滴泉。陈宗鲁诗：“龙沫凝珠露，清冷响涧淙。谁携余滴去？云里振风鬓。”(已上俱在瑞岩山中。）烽火山在海口北二里。海道有警，则举燧于此。山顶有嵌如屋状，深幽掩暖，凡三十六间，名日虎屋。鹿角山小溪有石，形似鹿角，故名。山之中大石，上有仙篆数字，人莫能晓。旁有仙井，阔尺有五寸，横入，深不可测。（上四山在新安里。）拱辰山山之绝峰，形如牛角而北拱，故名，俗号牛角山。下有石洞，深不可测，有风从洞中出，人不敢入。旁有石如鼓，方广丈余，其下危而不安，以一指微推之则动，两手尽力推之则不动。又有仙人迹、炼丹灶、石盆，迄今尚在。龙卧山中有五马石及龙潭，日传有龙蟠潭中。宋乾道九年，县令刘敦祷雨有感，为立龙堂。淳熙二年，县令范处义刻像祀之。(上二山在方城里。)小练山在永宾里。五代间，有卢、林二氏自光州固始从王氏入闽，卜居于此；至宋，二族日益繁盛，尝构义斋以教子弟以及旁近之人；淳熙后，登第者相踵，而林款乃其倡也。山当要冲，商舶多会于此，人号“小扬州”。后与坛山之民同徙连山居焉。龙山在方民里。即海口山也。（已上八山俱县东。）双旌山两峰峭立若旌幢然。玉融山县之前山也。旧传山峰第二迭，有石莹然如玉，故日玉融峰。(二山在县西新丰里。）白屿山在县南江阴里。亦名陈田山。山有鸿休岩，在山之绝顶。岩窦天成，下瞰沧溟，四望无极。昔有僧鸿休栖此，因名。又有鸟案岩，在鸿休卷之五地理岩之西，累石为之。初鸟窠游杭，巢木杪而居。白居易为守，因往访之，曰:“得无危乎?”答曰:“如公所处则危甚。”诘之，乃曰：“薪火不停，识性交攻，安得不危？”白以诗赠之。后居此，故以名岩。小孤山在文兴里。有和靖寒斋祠。灵石山在清源里。磅礴仅百里，峻拔逾千仞，层林积翠，飞泉漱玉。上有石，久晴，鸣则必雨；久雨，鸣则必晴。山有三峰：曰九迭，其势插天，层级可数；日留云，云留或经旬不散；日报雨，久旱欲雨，其峰必有声震响。又有通天石、仙人岩、碧仙洞、戏龙潭。石竺山在永寿里。山形峭拔，其巅有石巍然，上粘蛤蛎壳。山不甚多竹，惟竹根盘错，当春夏之交，饥者多于此果简以济，然欲多则不可得，号济贫筍。亦名石竹山。紫磨峰。狮子峰。象玉峰。补陀岩。石室。宋林希逸诗：“苔入荒崖隙，藤枯半壁花。山灵不敢住，分付与僧家。”仙升坛。按《三山志》：“昔有林玄光于此炼丹，丹成，骑虎上升。今有虎岩溪，石上有井，旱不涸，或日炼丹井。陈遂诗：“仙乐寂无响，云旗悄不翻。晓烟生石隙，夜雨涨苔痕。”鹤影石。林泉生诗：“鹤来仙已去，谁料虎能飞；怨入青山骨，千年永不归。”朝斗石。宋李丑父诗：“身丘魁杓近，月明星露寒，云中几声磬，谁信是人间!”陈遂诗：“片石平如砥，朝真仰太空，星后[琼简露，月落羽衣风。”双鲤石。林希逸诗：“日炙岂曝腮，雷惊不烧尾；真人上升去，留得琴高鲤。”棋盘石。伏虎石。宝所石。月灶。紫云洞。(已上俱在石竺山。)龟山。蛇水。罗汉台。洗耳泉。林希逸诗：“是非不须闻，好恶不须听，若要心源清，无如耳根净。”无尽泉。陈遂诗:“高山有泉脉，井口半飘如，没之亦不尽，不汲亦无余。”（已上俱在紫云洞。）黄檗山在清远里。以山多产黄檗，故名。林峦重复，为邑之胜。梁江淹尝游此，有诗：“阳轴飞鸾来[4]，阴溪喷龙泉，禽鸣丹碧上，猿啸清虚间。”上有瀑布泉，下有龙潭泉，垂数十丈，其势甚健，涂崖石为穴，下溶无底。潭口径八九尺，旧传中有龙，涛雨辄应。上绝险处复有一浑，人迹罕至。龙尝自下潭移上八闽通志潭，所历有爪迹。又有佛座蜂、香炉峰、吉祥峰、宝峰、钵孟蜂、五云峰、罗汉峰、紫微峰、屏障峰、天柱峰、狮子峰、报雨峰。宋陈确诗:“峭拔藏苍龙，烟云昼长锁，天际雨将来，山灵已先报。”山有黄檗寺。寺之西有嵩头陀岩，至今犹有乳香出石罅间。金翅山在永福里。脉从大义白鹿山东走二十里，矗起高数百丈，即此山也。形如鸟展两翅，故名。福胜山翁陂山田源山（上三山在清远里。已上八山俱县西。）闻读山在福唐里。旧名小隐岩。唐陈粲读书于此。一日，樵者蹑山麓，忽闻弦诵声，疑为神人，不知其为粲也。后改今名。上有遏云碣、潜公室、讲经台、狮子迹。何山在井得里。(上二山俱县东南。）牛田山在灵德里。草堂山在光贤里。昔尝有隐者筑草堂于此，因名。宋时松径犹存。旁有小瀑布。坛高数十尺。(上二山俱县西南。)大姨山在县东大海中。每风色晴定，日来出之先，于山上东望，见一山如空青，微出海面，乃琉球国也。俗谓望见则三日中必有怒风。其下水深碧色，东流而不返，有浮莎错织水上，舟不容转舵，必刳木为盂，乃能旋开浮莎以行。或海上风暴作，渔船漂泊必至此而后止。人为其国所获，则以藤串其足，令耕作山间，故此山夜忌举火，虑其国人望之而至也。南交山亦在大海中。灵峰上有仙坛，前有不溢泉。云峰峰之绝顶为白泽岩，有大石巍然不覆，中有石门，大可容数十人。又有双髻峰，峰之顶有仙坛，天然而成，高二丈余，四面如截肪，上平如削，亦有自然石为级道。宋乾道元年，雷劈为二。鹧鸪峰峰之阴多鹧鸪，故名。(上三峰在县西南安香里。）仙举岩在新宁里，与永福县接界。山形削拔千仞，其巅有石巍然，险不可登。又有一石穴，泉源不竭，可饮数十人。旁有一石如鼓，扣之即鸣。山与灵石九迭峰对時。相传尝有仙人隐此，岩上仙迹犹存。五周岩在方兴里，与闽县接界。旧传有兄弟五人，隐于岩中，后俱得道上升。上有卷之五地理棋盘仙迹之类。石灵岩在善福里。又名周店岩。七仙里[5]在遵义里。旧传有仙七人隐于此，其洞犹存，洞口虽狭，内通长乐县界。(已上四岩俱县西。）螺岭在县北六十里。岭势危峻，如悬梯而登，至其巅，北瞰方山，如在咫尺。其半属闽县。以其状名。灵曜岭在县南新丰里。常思岭界福清、闽县间。高数十丈，长二三里。又名相思岭。宋王珪赠元绛诗云：“春莫向相思岭[5]。”傀儡岭下有应石，在岭北驿路旁，过者呼之，其应如答。（上二岭俱在方兴里也。）石龙义泉岭在遵义里。(巴上三岭俱县西。）蒜岭在县西南光贤里。县志云；“山石间多产蒜苗，故名；或曰，山形如蒜瓣状，因名。东望涨海，弥漫无际，岭头旧有照海亭。东有翁承赞庄并昼锦亭，今废。宋刘克庄诗：“松气满山凉似雨，海声长夜近如雷。”马头石在县南安平里。石如马头，昂然高大，其旁有石如笋，远望若马系于其上，故名。石帆在南海中。有石如帆，一高一下，石上有泉，甚甘而清。五马石五石骈列，势若马之奔驰，高二丈余，与麒麟石、虾蟆石、狮子岩四面森立。（上四石俱县东。）石蛇在新宁里。石长丈余，如蛇状。石人石牛石马石龟(上四石在福唐里，皆以其状名。已上五石俱县东南。）石锣相传有仙人隐于此。卢焦石在昭灵庙前海中。高阔数丈，风涛漱激为龛岩玲珑之状，上多怪石。双髻石两峰堆起如碧髻然。(上三石在光贤里。)石枪在县西南安香里。岩石一一北向，尖利如枪。钟山屿在海坛里。山形如钟，故名；或云，昔人有钟没于屿旁，潮退，蒲牢犹隐隐可见，故名。海坛山四周涨海，水尽咸卤，独此水清淡可饮。中有老媪石，形如妇人，高二丈。石之前，有石天井，方广二十丈，中有石眼，深不可测，与海潮通焉。双屿在江阴里海中。二山突起相对，故名。亦日仙屿。上有渔户百家。尝有蔡道者居石岩，岩可容十余人。有古井，遇旱八闽通志不涸，水独甘冽。东有数岩及百年洞，乡人立神祠于洞中。又有草屿、堂屿、东草屿、盐屿，屿上居民亦于洪武二十年徙连山。南匿屿在南日里。居民颇多，成一廛市。地所产盐味稍淡，以卤鱼胜他盐。山多风，人家种一柏树，经十余年，才长五六尺。(上二屿在县南。）南匿江在县南南日里，距县隔九海凡二百九十里。其流自莆田县来，东流入于海。海口寨江在海坛下里，距县亦隔九海凡百余里。其源自长乐县石尤岭分水，而下注于江，以达于海。海口江[8]源出旧兴化县界，流为百丈溪，至金应铺为无患溪，东流二十里，合石溪，至水陆寺，合东溪，经县之河头，潴为琵琶洋，十八里入海，深广不可测。龙江广五里，深五丈余。旧名螺文江，后改名龙江。上接龙首河源，下通东南渤解，有桥横跨其上。（上二江在方民里。）松林江在永宾里，去海口镇五里。（已上四江俱县东。）径江在县西南灵德里。其源有二：一出旧兴化县界金支大泽，合渔溪；一出黄檗山北，过铁场边，北流，并渔溪，合径港，南至锦亭，东抵乌屿门]，又南至双屿头，歧面为二，东出白屿，西出后屿，复合于昭应庙前，会迎仙港入海。西溪在县治西门外。其流入龙首河而达于海。卢溪在县西北永福里。源出台岭，以其绕卢山，故名。交溪在县西善福里。其源一出常思岭而来，—自清源星井窑"来而，交流而会于此，故名。无患溪即宏路驿前大溪也。源出石竹山，入于交溪。相传林真人每以此水饮病者即愈，故名。（已上三溪其流皆入西溪。）苏溪在县西南安香里。源出莆田县界，西通横山潭，入此溪。古谶云：“苏溪不用船，此时出状元。”渔溪在县西南清远里。源出黄檗山里洋，与苏溪合流，达于海。迎仙港源出旧兴化县，合桃源之水为大溪，至迎仙市为子鱼潭；又历县境黄茅墩，合蒜溪，出江口，入海口。于鱼潭，详见莆田县《山川志》；蒜溪，即蒜岭溪。大蓝潭在浔阳里。岁旱祷之屡应。卷之五地理乾道九年，乡人筑石室以祀之。瑞龙潭在新安里。旧传有龙蟠其中。(上二潭在县东。）敛石潭在方兴里。其潭有三，南北相去各三里。北潭极峻险，危石夹径，可梯不可登，至者凛然。祷雨屡应。按《三山志》：“敛石院内有龙潭。”注云：“海口众流源于此。”疑即此潭。龙门潭祷雨辄应。宋乾道六年，县令吴竑立龙堂以祀之。龙溪潭在龙溪寺后。(上二澤在永福里。)东潦潭在遵义里。昔有龙见于大乘之东乡，邑人即其地祷雨屡应，因五龙堂以祀之。（上四潭俱在县西。）扶门潭在县西南安香里。祷雨有应。柏山潭在县东南福堂里龙堂山之下。按《玉融志》：“龙堂山，疑即闻读山，盖其中有龙堂故也。”双髻潭在光贤里双髻山之西。有瀑布泉，高数千尺，下潴为三潭，清激可鉴。按县有双髻峰，疑即双髻山也。横山潭潭之旁有仙人迹二，各长一尺二寸。石上隐起双字，其大盈尺，字画高二分。乡人祷雨，每有灵应，至者肃然。龙水潦潭去横山潭十五里。去此潭七里。又有可坑潭。（上二潭在苏田里。已上二潭俱县西南。）丹井在方民里福真观内。道士林知源炼丹之井，病者饮之或愈。瑞峰井在瑞峰普光塔西旁。旧湮没不知其处，永乐间，拓地重建佛殿，乃得之，其中石琵依然。泉水清洌，比丹井差胜。（上二井俱县东。)龙井在县西清远里黄檗寺后。一穴如盘状，深不满尺，泉水清洌，虽日汲之不竭。拜井在县东南并得里。相传闽王审知筑占计塘，凿井无泉，拜而得之，故名。古田县翠屏山在县北保安里。其形如屏，邑之主山也。旧名环屏山，醴酬山俗传山下有泉，其味如醴。仙亭山山之下有醴泉道院，中有亭。元时，道人项曲舟尝居其间，有仙术，故名。八闽通志(上二山在保安里。)旗山其状如旗，因名。又杉洋亦有旗山。五花山五山(上三山在崇醴里[13]。已上五山俱县南。)龟山在保安里。其形如龟。山有蓝洞，洞外草木畅茂，其色如蓝，故名。马山在杉洋之正南，午位，故名马山。鼓山界于旗山、马山之间，其形如鼓，因名。（上二山在安乐里。已上三山俱县东。）极乐山去县三里。北台山去县一里。黄檗山...</p>
+</div>
+</article>
+<!-- Sidebar -->
+<aside class="lg:col-span-4 xl:col-span-4 space-y-8">
+<!-- AdSense Placeholder -->
+<div class="flex items-center justify-center rounded-lg border border-dashed border-charcoal/20 bg-charcoal/5 dark:border-slate-700 dark:bg-slate-800 p-4">
+<div class="h-[600px] w-[300px] flex flex-col items-center justify-center text-charcoal/40 dark:text-slate-500">
+<span class="text-xs font-semibold uppercase tracking-widest mb-2">Advertisement</span>
+<div class="h-32 w-32 rounded-full bg-charcoal/10 dark:bg-slate-700 mb-4 animate-pulse"></div>
+<p class="text-xs text-center max-w-[200px]">Support the preservation of digital history by visiting our sponsors.</p>
+</div>
+</div>
+<!-- Context Widget: Key Figures -->
+
+<div class="rounded-xl bg-white dark:bg-slate-800 shadow-sm border border-primary/10 dark:border-white/5 p-6">
+<h3 class="flex items-center gap-2 font-serif text-lg font-bold text-charcoal dark:text-white mb-4 border-b border-primary/10 pb-2">
+<span class="material-symbols-outlined text-primary">person_book</span>
+Key Figures
+</h3>
+<div class="space-y-4">
+
+<div class="group flex items-start gap-3 cursor-pointer">
+<div class="h-10 w-10 shrink-0 overflow-hidden rounded-full bg-primary/10">
+<span class="flex h-full w-full items-center justify-center text-primary font-serif font-bold">又</span>
+</div>
+<div>
+<h4 class="font-bold text-charcoal dark:text-slate-200 group-hover:text-primary transition-colors">又按</h4>
+<p class="text-xs text-charcoal/60 dark:text-slate-400">Historical Figure</p>
+</div>
+</div>
+
+<div class="group flex items-start gap-3 cursor-pointer">
+<div class="h-10 w-10 shrink-0 overflow-hidden rounded-full bg-primary/10">
+<span class="flex h-full w-full items-center justify-center text-primary font-serif font-bold">此</span>
+</div>
+<div>
+<h4 class="font-bold text-charcoal dark:text-slate-200 group-hover:text-primary transition-colors">此说又与</h4>
+<p class="text-xs text-charcoal/60 dark:text-slate-400">Historical Figure</p>
+</div>
+</div>
+
+<div class="group flex items-start gap-3 cursor-pointer">
+<div class="h-10 w-10 shrink-0 overflow-hidden rounded-full bg-primary/10">
+<span class="flex h-full w-full items-center justify-center text-primary font-serif font-bold">苏</span>
+</div>
+<div>
+<h4 class="font-bold text-charcoal dark:text-slate-200 group-hover:text-primary transition-colors">苏轼</h4>
+<p class="text-xs text-charcoal/60 dark:text-slate-400">Historical Figure</p>
+</div>
+</div>
+
+<div class="group flex items-start gap-3 cursor-pointer">
+<div class="h-10 w-10 shrink-0 overflow-hidden rounded-full bg-primary/10">
+<span class="flex h-full w-full items-center justify-center text-primary font-serif font-bold">同</span>
+</div>
+<div>
+<h4 class="font-bold text-charcoal dark:text-slate-200 group-hover:text-primary transition-colors">同治</h4>
+<p class="text-xs text-charcoal/60 dark:text-slate-400">Historical Figure</p>
+</div>
+</div>
+
+<div class="group flex items-start gap-3 cursor-pointer">
+<div class="h-10 w-10 shrink-0 overflow-hidden rounded-full bg-primary/10">
+<span class="flex h-full w-full items-center justify-center text-primary font-serif font-bold">宋</span>
+</div>
+<div>
+<h4 class="font-bold text-charcoal dark:text-slate-200 group-hover:text-primary transition-colors">宋曹文姬</h4>
+<p class="text-xs text-charcoal/60 dark:text-slate-400">Historical Figure</p>
+</div>
+</div>
+
+</div>
+</div>
+
+<!-- Context Widget: Geographic Locations -->
+
+<div class="rounded-xl bg-white dark:bg-slate-800 shadow-sm border border-primary/10 dark:border-white/5 p-6">
+<h3 class="flex items-center gap-2 font-serif text-lg font-bold text-charcoal dark:text-white mb-4 border-b border-primary/10 pb-2">
+<span class="material-symbols-outlined text-primary">landscape</span>
+Geographic Locations
+</h3>
+<div class="flex flex-wrap gap-2">
+
+<a href="/search.html?q=建宁府" class="inline-flex items-center rounded-full bg-primary/5 px-3 py-1 text-xs font-medium text-primary ring-1 ring-inset ring-primary/20 hover:bg-primary hover:text-white transition-colors cursor-pointer">建宁府</a>
+
+<a href="/search.html?q=延平府" class="inline-flex items-center rounded-full bg-primary/5 px-3 py-1 text-xs font-medium text-primary ring-1 ring-inset ring-primary/20 hover:bg-primary hover:text-white transition-colors cursor-pointer">延平府</a>
+
+<a href="/search.html?q=福州府" class="inline-flex items-center rounded-full bg-primary/5 px-3 py-1 text-xs font-medium text-primary ring-1 ring-inset ring-primary/20 hover:bg-primary hover:text-white transition-colors cursor-pointer">福州府</a>
+
+</div>
+</div>
+
+<!-- Related Volumes -->
+
+<div class="rounded-xl bg-paper dark:bg-white/5 p-6">
+<h3 class="font-serif text-base font-bold text-charcoal/80 dark:text-slate-300 mb-3">Next in Collection</h3>
+
+<a href="/volume/卷06.html" class="block group mb-3" style="margin-bottom:0">
+<div class="flex items-center justify-between">
+<span class="text-sm font-medium text-charcoal group-hover:text-primary dark:text-slate-200 transition-colors">八闽通志</span>
+<span class="material-symbols-outlined text-sm text-charcoal/40 group-hover:text-primary transition-colors">arrow_forward</span>
+</div>
+<p class="mt-1 text-xs text-charcoal/50 dark:text-slate-500 line-clamp-2">本卷为《八闽志》记载涉及1个府级行政区划，描述山川地理。...</p>
+</a>
+
+</div>
+
+</aside>
+</div>
+</div>
+</main>
+<!-- Simple Footer -->
+<footer class="mt-auto border-t border-primary/10 bg-white py-12 dark:bg-background-dark dark:border-white/10">
+<div class="mx-auto max-w-7xl px-6 flex flex-col md:flex-row justify-between items-center gap-6">
+<div class="flex items-center gap-2">
+<div class="flex h-6 w-6 items-center justify-center rounded bg-charcoal text-white">
+<span class="material-symbols-outlined text-sm">history_edu</span>
+</div>
+<span class="font-serif font-bold text-charcoal dark:text-white">Ba Min Tong Zhi Digital Project</span>
+</div>
+<p class="text-sm text-charcoal/50 dark:text-slate-500">© 2024 Digital Humanities Lab. All rights reserved.</p>
+</div>
+</footer>
+<script>
+document.getElementById('searchInput').addEventListener('keypress', function(e) {
+    if (e.key === 'Enter') {
+        window.location.href = '/search.html?q=' + encodeURIComponent(this.value);
+    }
+});
+</script>
+</body>
+</html>

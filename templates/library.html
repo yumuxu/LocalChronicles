@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="mb-8">
+    <h2 class="text-3xl font-serif font-bold text-charcoal dark:text-white mb-4">All Volumes</h2>
+    <p class="text-neutral-600 dark:text-neutral-400">Browse all 43 volumes of the Ba Min Tong Zhi</p>
+</div>
+
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+    {% for vol in volumes %}
+    <a href="/volume/{{ vol.id }}.html" class="group bg-white dark:bg-white/5 border border-primary/10 rounded-xl p-6 hover:shadow-xl hover:shadow-primary/5 transition-all duration-300 hover:-translate-y-1 cursor-pointer relative overflow-hidden block">
+        <div class="absolute top-0 right-0 w-16 h-16 bg-primary/5 rounded-bl-full -mr-8 -mt-8 transition-transform group-hover:scale-150"></div>
+        <div class="flex justify-between items-start mb-4 relative z-10">
+            <span class="bg-primary/10 text-primary text-xs font-bold px-2 py-1 rounded">Vol. {{ vol.number }}</span>
+            <span class="material-symbols-outlined text-neutral-300 group-hover:text-primary transition-colors">bookmark</span>
+        </div>
+        <h4 class="text-xl font-serif font-bold text-charcoal dark:text-white mb-2 group-hover:text-primary transition-colors">{{ vol.title }}</h4>
+        <p class="text-sm text-neutral-500 dark:text-neutral-400 mb-4 line-clamp-2">{{ vol.summary }}...</p>
+        {% if vol.tags %}
+        <div class="flex flex-wrap gap-2">
+            {% for tag in vol.tags[:3] %}
+            <span class="text-[10px] uppercase tracking-wider text-neutral-400 border border-neutral-200 dark:border-neutral-700 px-2 py-0.5 rounded">{{ tag }}</span>
+            {% endfor %}
+        </div>
+        {% endif %}
+    </a>
+    {% endfor %}
+</div>
+{% endblock %}

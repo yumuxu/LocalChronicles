@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+
+<html lang="zh-CN"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>八闽通志 - 八闽通志</title>
+<meta name="description" content="本卷为《八闽志》记载涉及8个府级行政区划，描述山川地理。">
+<link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500;700&family=Noto+Serif+SC:wght@400;700&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+        darkMode: "class",
+        theme: {
+            extend: {
+                colors: {
+                    "primary": "#9f2d23",
+                    "background-light": "#FDFCF0",
+                    "background-dark": "#201412",
+                    "charcoal": "#2C2C2C",
+                    "paper": "#F7F5E8",
+                    "ink": "#383838",
+                },
+                fontFamily: {
+                    "display": ["Public Sans", "sans-serif"],
+                    "serif": ["Noto Serif SC", "serif"],
+                },
+                borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+            },
+        },
+    }
+</script>
+<style>
+    .vertical-text {
+        writing-mode: vertical-rl;
+        text-orientation: mixed;
+    }
+</style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-ink dark:text-slate-200 font-display min-h-screen flex flex-col">
+<!-- Header -->
+<header class="sticky top-0 z-50 w-full border-b border-primary/10 bg-background-light/95 backdrop-blur dark:bg-background-dark/95">
+<div class="mx-auto flex h-16 max-w-7xl items-center justify-between px-6">
+<div class="flex items-center gap-6">
+<a class="flex items-center gap-3 text-charcoal dark:text-white group" href="/">
+<div class="flex h-8 w-8 items-center justify-center rounded bg-primary text-white transition-colors group-hover:bg-primary/90">
+<span class="material-symbols-outlined text-xl">auto_stories</span>
+</div>
+<h1 class="font-serif text-xl font-bold tracking-tight">八闽通志</h1>
+</a>
+<nav class="hidden md:flex items-center gap-6 text-sm font-medium text-charcoal/80 dark:text-slate-300">
+<a class="hover:text-primary transition-colors" href="/">Home</a>
+<a class="hover:text-primary transition-colors" href="/library.html">Volumes</a>
+<a class="hover:text-primary transition-colors" href="/search.html">Search</a>
+<a class="hover:text-primary transition-colors" href="/about.html">About</a>
+</nav>
+</div>
+<div class="flex items-center gap-4">
+<div class="relative hidden sm:block">
+<span class="absolute inset-y-0 left-0 flex items-center pl-3 text-primary/60">
+<span class="material-symbols-outlined text-lg">search</span>
+</span>
+<input id="searchInput" class="h-9 w-64 rounded-full border-none bg-primary/5 py-1 pl-10 pr-4 text-sm text-charcoal placeholder-primary/40 focus:ring-1 focus:ring-primary dark:bg-white/10 dark:text-white" placeholder="Search volumes..." type="text"/>
+</div>
+</div>
+</div>
+</header>
+<!-- Main Content -->
+<main class="flex-1">
+<div class="mx-auto max-w-7xl px-6 py-8">
+<!-- Breadcrumbs -->
+<nav class="mb-8 flex items-center text-sm text-charcoal/60 dark:text-slate-400">
+<a class="hover:text-primary hover:underline" href="/library.html">Library</a>
+<span class="mx-2 text-primary/40">/</span>
+<a class="hover:text-primary hover:underline" href="#">Fujian Provincial Chronicles</a>
+<span class="mx-2 text-primary/40">/</span>
+<span class="font-medium text-charcoal dark:text-slate-200">八闽通志</span>
+</nav>
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
+<!-- Main Reader Column -->
+<article class="lg:col-span-8 xl:col-span-8">
+<!-- Title Section -->
+<div class="mb-10 border-b border-primary/10 pb-6">
+<div class="flex items-start justify-between">
+<div>
+<span class="mb-2 inline-block rounded bg-primary/10 px-2 py-0.5 text-xs font-semibold uppercase tracking-wider text-primary">Historical</span>
+<h1 class="font-serif text-4xl font-bold text-charcoal dark:text-white leading-tight mb-2">八闽通志</h1>
+<p class="text-charcoal/60 dark:text-slate-400 text-lg"></p>
+</div>
+<div class="flex gap-2">
+<button class="p-2 text-charcoal/60 hover:text-primary hover:bg-primary/5 rounded-full transition-colors" title="Bookmark">
+<span class="material-symbols-outlined">bookmark</span>
+</button>
+<button class="p-2 text-charcoal/60 hover:text-primary hover:bg-primary/5 rounded-full transition-colors" title="Print">
+<span class="material-symbols-outlined">print</span>
+</button>
+<button class="p-2 text-charcoal/60 hover:text-primary hover:bg-primary/5 rounded-full transition-colors" title="Share">
+<span class="material-symbols-outlined">share</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Modern Summary Box -->
+
+<div class="mb-12 overflow-hidden rounded-lg bg-paper border border-primary/5 dark:bg-white/5 dark:border-white/10 shadow-sm">
+<div class="flex flex-col md:flex-row">
+<div class="relative h-48 w-full md:h-auto md:w-1/3 overflow-hidden">
+<div class="absolute inset-0 bg-cover bg-center" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuC-JGvQVHWmyNh7BUJXeT_74AzCgoUabelktaqDxrls3BqnpHMpc_5BYJqJLXvUfKEYuZY9gst8zu-MIlD3sR9ooO49hcxWbJSuZmBkbaqWwxC5B3zY_sMxEi3ac2MoVMjygAp-r-qfNXuDZnO7xZbuEJbgHq0SA4vM680yacuWFGAif5JAeDZ-SVtv58P6V-UqxVCxN3amajxNe7_KWc9PSh1xnmVTl9puKpAapRMkDabnEoDAy5o-P-aARRYaRwMrvsHfLGkV85A');"></div>
+<div class="absolute inset-0 bg-primary/10 mix-blend-multiply"></div>
+</div>
+<div class="p-6 md:w-2/3">
+<h3 class="mb-2 flex items-center gap-2 font-serif text-lg font-bold text-primary">
+<span class="material-symbols-outlined text-lg">summarize</span>
+Modern Summary
+</h3>
+<p class="text-base leading-relaxed text-charcoal/80 dark:text-slate-300">
+本卷为《八闽志》记载涉及8个府级行政区划，描述山川地理。
+</p>
+</div>
+</div>
+</div>
+
+<!-- Main Text Content -->
+<div class="prose prose-lg max-w-none font-serif text-ink dark:text-slate-200">
+<p class="leading-loose mb-6 text-lg text-charcoal/90 dark:text-slate-300">八闽通志卷之三地設理风俗岁时附福建布政司其俗颇同豫章。《隋书·地理志》：“豫章之俗，君子善居室，小人勤耕稼。衣冠之人，多有数妇，暴面市廛，竞分铢以给其夫。建安俗颇同豫章。”按隋建安郡，即今八闽之地也。民安土乐业，《宋史·地理志》：“民安土乐业，川原浸灌，田畴膏沃，无凶年之扰。”向学喜讲诵，好为文辞。同上。信鬼尚祠，重浮屠之教。同上。硗确之地，耕耨殆尽。同上：“土地迫陋，生籍繁夥；虽硗确之地，耕耨殆尽。亩直寝贵，故多田讼。终岁勤动，仅足给食。元贡师泰《送李尚书序》。福州府遇兵不馑，遇荒不掠。晋郭璞《迁城铭》：“云云，逢灾不染。”其俗俭啬，喜讼好巫。《图经》：“其俗俭啬，争者喜讼，病1C八闽通志者好巫。”海滨几及洙泗。同上：“晋永嘉衣冠趋闺，自是畏乱无复仕。神龙中，州人薛令之始登上第。其后，李椅、常褒皆以崇重学校为意，于时云云。女作率登于男。同上。民俗舒缓。本志：“由建、剑溪湍而下，泉、莆潮涨而上，适主是而平，民生其间，故其性舒缓，其志强力，可以久安无忧，真乐土也。”产惧薄以勤羡，用喜啬以实华。《闽中记》。家庠序而人诗书。同上：“自晋、宋文雅以来，教化丕变，云云。”君子外鲁内文，小民谨事畏法。同上。《方舆胜览》作“内鲁外文”，恐误。民以鱼盐为生。同上。长乐县土瘠民稠。本志。男勤耕读，女尚蚕织。同上。滨海者事鱼钓，附山者为工商。连江县地瘠民贫，宋林耕《贡士庄记》。习用俭约，人多尚义，治丧不用浮屠。本志。福清县土瘠，物货不产，宋刘克庄《陈公生祠记》：“云云，商贾靡至。”君子多业诗书，细民多执工艺。县地瘠俗贫，秀民读书登第者，与长乐相埒，而小民执工艺以营衣食者，视诸县独多。喜争健讼。其俗劲悍，喜争而健讼，为诸邑冠。古田县民识教化。宋邑令陈昌期《学记》：“先是，邑人贵巫尚鬼。景德间，李堪令邑，禁革巫鬼，民始识仁义、礼乐、教化。”民俗鄙朴，颇好评讼。本志。文物彬彬。元吴海《送郑训导序》：“古田在昔，提封之广，居民之众，邑里之华，文物之盛，盖彬彬焉。”迩来凋敝，皆不如昔。永福县其民火葛水耕，崖锄陇莳。末知县黄子埋《玩芳亭记》:“其山居之民，终身不知车马驰骤之逸，云云。”民淳而好礼。元员外林温曰：“云云，又多文学之士。”易治而难服。林岳《虚心堂记》：“簪缨星罗，弦诵风行，磐此有文，农工知义，卷之三地理云云。”闽清县家相率而学，人相率而善。宋常挺《贡土庄增田记》。材俊辈出。元黄直《修庙学记》。男耕女织，民不侈靡。本志。罗源县髦士辈出，细民知学。本志：“初，县治湫隘，人文寂寞。宋绍兴中，知县陈偶迁之后髦士辈出，细民亦知向学。”民淳讼简，敦尚本业。同上。岁时习俗随方异尚，观于《豳》诗所述可见矣。《荆楚岁时记》：“原气化之屈伸，著物理之迁变，见闾里之礼节，系人情之醇薄”，其亦《豳》诗之遗意欤！三山曾师建尝效之以记闽事。兹特撮其大概。并著其古今之异尚者，以附于篇，亦风俗之一端也。元日祈年五鼓后，郡人无贵贱贫富，皆严洁厅字，陈酒果，焚楮币，拜上下神祇，以祈灵观。序拜闽俗最重元日，黎明各盛服，飨祀毕，序拜称筋，祝尊者寿，然后出拜亲族邻里，往反更谒，尽节假乃止。按旧志：“岁节往来，自缙绅而下，士民吏胥，商贾皂隶，衣服有等，称谓有常，锱铢不敢陵躐。”盖宋之盛时，风俗如此。南渡以后，渐失等威，历元至今，流风余韵，虽间有存者，然视宋之盛时，相去天渊矣。上冢岁节之二三日，华门巨姓，率携长幼拜扫坟莹，至开假乃止。入学宋之盛时，凡乡里各有社学。岁前一二月，父兄相与议，求有学识行艺可以师表后进者一人，推一二有力者为纠首，以诸生姓名具于关[1]，敬谒以请；既许可，乃于岁节后十日，备礼延致于学，子弟迎谒再拜，执经授业，课试讲改，率有规约，其资质之俊秀者，恒以岁通一经为期。郡守程师孟诗云“城里人家半读书”，又云“学校未尝虚里巷”。故当是时，周希孟、陈烈诸先生相继以德行经术鸣于时。人才之盛，盖彬八闽通志彬焉。其后士以趋试上库，率游学四方；而乡之先生，乃各开门以往来者，事师之礼浸衰，教人之法甚略，陵夷以至于今，日以益甚，此有识之士所为慨叹也。立春蔬饼闽俗立春以为节物。宋蔡襄《立春寄福州郡守燕受》诗[“春盘食菜思三九”，又罗源林迪诗“青韭供盘饼面圆”。上元彩山宋时，每岁元夕，州设彩山以向谯门，集俳优妓女，大合乐其上。渡江后废。绍兴中，张浚为帅，复设，自是不废。入国朝来，民俗祈年，虽间有设于境者，而官府则不复设于此，亦可以观我祖宗节俭之化矣。观灯宋时郡守，每遇上元，会监司置酒临赏三夕。元丰中，刘瑾为守，元夕，命民间户燃灯十盏。陈烈作大灯，题诗其上曰：“富家一盏灯，太仓一粒粟；贫家一盏灯，父子相聚哭。风流太守知不知？惟恨笙歌无妙曲。”瑾闻而谢之。按晁氏《家语》谓蔡君谟于上元命民间点灯七盏，陈烈作大灯，书此诗其上，君谟见之，罢灯。其说与此不同。考之于史，君谟与烈同时，最厚，而刘瑾为郡，后君谟三十六年，晁氏之言，或有所据也。寒食开花园宋时，州园在牙门之西，谓之春台馆。岁二月启钥，纵民游赏，常阅一月，盖与民同乐之意也。蔡襄为郡日，有《开花园》诗：“风物朝来好，园林雨后清。鱼游知水暖[4]，蝶戏见春晴。草软迷行迹，花深隐笑声。观风聊自适，不用管弦迎。程师孟《春风亭》诗：“为报寻芳沽酒客，年年到此且徘徊。”今园已废，而宦游者亦无暇及此也。游山郡人以是日踏青，东郊尤盛，多拾野菜煮腥，亦唐人杏粥榆奠之意也。太守以假日拉察属登临。蔡襄有《寒食游西湖》诗，程师孟有《寒食游九仙乌石山》诗。一时太平气象，可想见也。墓祭郡之富室大姓，多有难莹田。每岁寒食，必祭墓下，祭毕，乃合族人燕饮，款洽竟日，亦尊祖睦族之道也。上巳禊饮旧记：“闽县东有桑溪，越王无诸尝流杯宴集于卷之三地理此。宋时，太守禊饮之地有三：一日南湖禊游亭，二日东禅肖兰堂，三日圣泉曲水亭。郡守王逵《上已游东禅》诗：“紫陌破清晨，雕鞍映画轮；因修洛阳视，重忆永和春。”青饭民俗，上巳日，取南烛木茎叶捣碎，渍米为饭，染成绀青之色，谓日进一合，可以延年。南烛木者，冬夏常青，《本草》：“吴、越多有之。”端午插艾是日，天未明，插艾于户上、以镶沙气。乡村或采楝木叶插之，谓可禁蚊。系五色线是日，长幼悉以五色线系臂，名日长命缕。又曰续命缕。父老相传，谓可辟蛇。至七夕，始解弃之。饮菖蒲酒李彤《四序总要》云：“妇礼，五日上续寿菖蒲酒，以《本草》云“菖蒲可以延年”，故也。今郡人是日饮之，名曰饮续。角黍楚人是日以竹简贮米祭屈原，名简粽。后人相承，遂用箬叶裹米而熟之，名日角黍，以为节物。竞渡楚人以吊屈原，后四方相承，遂为故事，闽俗尤重之。郡南台江沿内诸河，龙舟旁午，钲鼓喧阗，共斗轻驶。宋郡守程师孟诗：“三山缥缈霭蓬瀛，一望青天十里平；千骑临流塞翠幄，万人拥道出重城；参差蝶蛛横波阔，飞跃鲸鲵斗楫轻；互醉尊前金潋滟，笙歌归去月华明。”绍兴中，因乡村争斗杀伤，遂一切拘纳，分诸院修浮桥船，后稍稍复造，迄今又益盛矣。采药是日，郡人多出城收采诸药品蓄之。七夕乞巧是夜，儿女罗酒果于庭，祝牛、女二星，暗拜以乞巧。闽令应廓诗：“彩楼乞巧知多少，直到更阑漏欲终。”中元孟兰盆会郡人以是日严洁厅字，设祖考斋筵荐献，贫者率就寺院供设，近数十年来此风稍减。焚楮衣前中元一二日，具酒馔祭享，仍以纸衣逐位焚献。重阳登高郡人率以是日登高临赏，饮菊酒以延年，插茱萸以辟恶。冬至序拜郡人亦重此节。节前邻里族戚更相馈遗，上冢祭享。至节日，则序拜如献岁之仪。八闽通志除夜逐疫郡人谓之打夜狐，即古者乡人滩之意也。曾师建云：“《南史》载：曹景宗为人好乐，在扬州时，腊月则使人邪呼逐除，遍往人家乞酒食以为戏。”今闽俗乃日打夜狐，岂以作邪呼之语而讹欤？愧岁别岁守岁岁晚相愧遗，除夜则相与燕集，达旦不眠。火爆《荆楚岁时记》云：“山得恶鬼，犯人辄病，恶爆竹之声。”李彤云：“元日爆竹于庭，辟山恶鬼，后人因以火药为爆烧之。”宿岁《荆楚岁时记》云：“岁暮，家家具肴馔，为宿岁之储，以迎新年，相聚燕饮。”闽俗亦然。又留饭为节假内之备，谓之隔年饭。桃符钟馗书桃符，置户两旁，挂钟馗门上，以厌邪魅。建宁府备五方之俗。《建安志》：“自五代乱离，江北士大夫、豪商巨贾，多逃难于此，故云云。”处市井者，尚侈而好浮；居田里者，勤身而乐业，同上。尚气而喜节。同上：“云云，易斗而轻生，君子勇于为善，小人敢于为恶。”其民之秀者狎于文；宋韩元吉记。赋其厉气者，亦悍以劲。同上。家有诗书，户藏法律。同上。其民猱黠而易随。宋盛均序。土风差胜，《建安集》：“农力甚勤，桑麻被陇，茶笋连山，云云。”水无涓滴不为用，山到崔嵬犹力耕。朱行中诗。道义之乡，本志：“自朱文公倡道东南，彬彬然道义之乡。”弦诵相闻。同上：“擢科第、登馆阁者，彬彬辈出，居畎亩、处间里者，弦诵之声相闻。”贵贱不相等。同上：“贫富不相资，云云。毕门圭窦之士，皆能挟族谱以推流派。”浦城县士颇以名节自励。本志。松溪县土风淳朴，人性俭约本志：“云云，山多田少，卷之三地理地痛民贫，男务耕稼，女勤织维，不事商贾末技。崇安县民知文雅。本志：“其民多悍戾而罕尚文艺，唐李频为建州刺史，以礼法治下，民始知文雅。至宋，胡文定、刘屏山、朱文公诸贤继出，诗书礼乐之盛，几于诛泗矣。”寿宁县民节俭而简子礼义。本志：“其地山高水寒，惟宜稻而不宜桑麻。民多务本而少逐末，恒知节俭而简于礼义：一失其平，叫呼四出，析之以理，忿怒亦销。”岁时岁首庆节大概与福州府同。祀灶俗谓“正月五日夜，灶神朝天回”，故祭之。祭门正月五日暮，具香烛酒果以祭。里塾初旬后，邑人之有子弟者，相率敦请乡先生一人于里垫以教之。上元燃灯每岁正月十三日始，至十七日止，郡人各张灯于门，或三盏，或五盏，城中驰禁，彻夜听民观赏。三月墓祭郡人自季春朔为始，随便择日，备牲醴率卑幼，谒先莹，祭扫既毕，俊余而归。端午插蒲艾是日，民家各插艾及菖蒲于门，以穰灾渗，或采桃叶插之，谓可以辟邪。饮菖蒲酒角黍竞渡大概俱与福州府同。七夕乞巧是夜，郡人女子具彩缕，设香烛酒果，以祀牛、女二星，谓之乞巧。中元孟兰盆会郡人以七月朔日始，至晦日止，相与率钱请僧建孟兰盆会，以追荐祖考，亦有具牲醴祭子家者。杜日宴社每岁春秋社日，具鸡豚酒食，以祀土谷之神，已乃会宴，尽欢而退。重阳寿糕九月九日，郡人粉米为糕，交相赠遗，谓之寿八闽通志糕。茱黄酒是日，饮某萸酒，以辟邪气。十月朝荐糍是日，为豆米糍以祀先，然后交相馈遗。冬至序拜此节惟家庭自序长幼以拜。荐圆是日，粉米为丸以祀先，盖取团圆之义。岁除馈岁以牲畜酒果交相馈遗，谓之馈岁。祭灶俗谓腊月二十四日灶神朝天，故祭之。桃符爆竹俱与福州府同。守岁郡人遇除夜，俱不就寝，或夜分，或达旦，谓之守岁。泉州府民淳讼简，宋王十朋《止讼文》：“泉在七闽之中，云云，素号易治。”俗尚俭朴，《图经》：“濒海者特鱼盐为命，依山者以桑麻为业，大抵皆尚俭朴。”多好佛法，同上。重婚姻丧祭。同上：“云云，以俭薄为耻。”槟榔为礼，同上：“间里朋友，吉凶庆吊，皆以槟榔为礼。《方舆胜览》谓“槟榔消瘴”，今宾客相见，必设此为重。俗之婚聘，亦借此以赞焉。风俗淳厚。宋张阐云：“泉之为郡，云云。”其人乐善，同上：“云云，素号佛国。”素习诗书。宋曹修睦《建学表》：“地推多士，云云。”爱身畏法，崇逊耻争。儒者安于闾里，以漂泊为病；仕者守其涂辙，以奔竞为羞。宋志。木少桑柘，妇罕蚕织。同上：“云云。冬无冰雪，或不御绵。”南安县弦诵相闻。国朝陈叔刚《重建夫子庙记》：“南安去郡治最近，号称剧邑。深仁厚泽之所甄陶者六十余年，百里之间，云云。”同安县邑人知敬信朱子之学元林泉生《大同书院记》：“今去朱子二百年矣，所谓高士轩者，古老相传，敝则必葺。同安多古碑，凡朱子所撰述者，邑人能成诵之，彼岂为虚敬哉!卷之三地理永春县咏而归者日滋。宋陈知柔《修学记》。安溪县掌地成田。宋黄统诗：“掌地也成田。”惠安县地瘠民贫。宋陈安国《儒学记》：“惠安濒海云云。”岁时元日序拜上元放灯人学大概与建宁府同。清明祭扫端午插艾角黍竞渡七夕乞巧中元孟兰盆会焚楮衣重阳登高冬至序拜除夕桃符爆竹已上各节土俗大概与福州府同。漳州府其民务本，不事末作。宋傅自得《道院记》。质朴谨畏。宋陈淳《北溪集》：“此间民俗，大概云云。然其间亦有奸雄健讼，为善良之梗，使不获安息者。”俗尚淫祀，同上：“云...</p>
+</div>
+</article>
+<!-- Sidebar -->
+<aside class="lg:col-span-4 xl:col-span-4 space-y-8">
+<!-- AdSense Placeholder -->
+<div class="flex items-center justify-center rounded-lg border border-dashed border-charcoal/20 bg-charcoal/5 dark:border-slate-700 dark:bg-slate-800 p-4">
+<div class="h-[600px] w-[300px] flex flex-col items-center justify-center text-charcoal/40 dark:text-slate-500">
+<span class="text-xs font-semibold uppercase tracking-widest mb-2">Advertisement</span>
+<div class="h-32 w-32 rounded-full bg-charcoal/10 dark:bg-slate-700 mb-4 animate-pulse"></div>
+<p class="text-xs text-center max-w-[200px]">Support the preservation of digital history by visiting our sponsors.</p>
+</div>
+</div>
+<!-- Context Widget: Key Figures -->
+
+<div class="rounded-xl bg-white dark:bg-slate-800 shadow-sm border border-primary/10 dark:border-white/5 p-6">
+<h3 class="flex items-center gap-2 font-serif text-lg font-bold text-charcoal dark:text-white mb-4 border-b border-primary/10 pb-2">
+<span class="material-symbols-outlined text-primary">person_book</span>
+Key Figures
+</h3>
+<div class="space-y-4">
+
+<div class="group flex items-start gap-3 cursor-pointer">
+<div class="h-10 w-10 shrink-0 overflow-hidden rounded-full bg-primary/10">
+<span class="flex h-full w-full items-center justify-center text-primary font-serif font-bold">火</span>
+</div>
+<div>
+<h4 class="font-bold text-charcoal dark:text-slate-200 group-hover:text-primary transition-colors">火爆</h4>
+<p class="text-xs text-charcoal/60 dark:text-slate-400">Historical Figure</p>
+</div>
+</div>
+
+<div class="group flex items-start gap-3 cursor-pointer">
+<div class="h-10 w-10 shrink-0 overflow-hidden rounded-full bg-primary/10">
+<span class="flex h-full w-full items-center justify-center text-primary font-serif font-bold">宋</span>
+</div>
+<div>
+<h4 class="font-bold text-charcoal dark:text-slate-200 group-hover:text-primary transition-colors">宋陈淳</h4>
+<p class="text-xs text-charcoal/60 dark:text-slate-400">Historical Figure</p>
+</div>
+</div>
+
+<div class="group flex items-start gap-3 cursor-pointer">
+<div class="h-10 w-10 shrink-0 overflow-hidden rounded-full bg-primary/10">
+<span class="flex h-full w-full items-center justify-center text-primary font-serif font-bold">宿</span>
+</div>
+<div>
+<h4 class="font-bold text-charcoal dark:text-slate-200 group-hover:text-primary transition-colors">宿岁</h4>
+<p class="text-xs text-charcoal/60 dark:text-slate-400">Historical Figure</p>
+</div>
+</div>
+
+<div class="group flex items-start gap-3 cursor-pointer">
+<div class="h-10 w-10 shrink-0 overflow-hidden rounded-full bg-primary/10">
+<span class="flex h-full w-full items-center justify-center text-primary font-serif font-bold">宋</span>
+</div>
+<div>
+<h4 class="font-bold text-charcoal dark:text-slate-200 group-hover:text-primary transition-colors">宋卓遵</h4>
+<p class="text-xs text-charcoal/60 dark:text-slate-400">Historical Figure</p>
+</div>
+</div>
+
+<div class="group flex items-start gap-3 cursor-pointer">
+<div class="h-10 w-10 shrink-0 overflow-hidden rounded-full bg-primary/10">
+<span class="flex h-full w-full items-center justify-center text-primary font-serif font-bold">陈</span>
+</div>
+<div>
+<h4 class="font-bold text-charcoal dark:text-slate-200 group-hover:text-primary transition-colors">陈俊卿</h4>
+<p class="text-xs text-charcoal/60 dark:text-slate-400">Historical Figure</p>
+</div>
+</div>
+
+</div>
+</div>
+
+<!-- Context Widget: Geographic Locations -->
+
+<div class="rounded-xl bg-white dark:bg-slate-800 shadow-sm border border-primary/10 dark:border-white/5 p-6">
+<h3 class="flex items-center gap-2 font-serif text-lg font-bold text-charcoal dark:text-white mb-4 border-b border-primary/10 pb-2">
+<span class="material-symbols-outlined text-primary">landscape</span>
+Geographic Locations
+</h3>
+<div class="flex flex-wrap gap-2">
+
+<a href="/search.html?q=延平府" class="inline-flex items-center rounded-full bg-primary/5 px-3 py-1 text-xs font-medium text-primary ring-1 ring-inset ring-primary/20 hover:bg-primary hover:text-white transition-colors cursor-pointer">延平府</a>
+
+<a href="/search.html?q=邵武府" class="inline-flex items-center rounded-full bg-primary/5 px-3 py-1 text-xs font-medium text-primary ring-1 ring-inset ring-primary/20 hover:bg-primary hover:text-white transition-colors cursor-pointer">邵武府</a>
+
+<a href="/search.html?q=漳州府" class="inline-flex items-center rounded-full bg-primary/5 px-3 py-1 text-xs font-medium text-primary ring-1 ring-inset ring-primary/20 hover:bg-primary hover:text-white transition-colors cursor-pointer">漳州府</a>
+
+<a href="/search.html?q=福宁州" class="inline-flex items-center rounded-full bg-primary/5 px-3 py-1 text-xs font-medium text-primary ring-1 ring-inset ring-primary/20 hover:bg-primary hover:text-white transition-colors cursor-pointer">福宁州</a>
+
+<a href="/search.html?q=汀州府" class="inline-flex items-center rounded-full bg-primary/5 px-3 py-1 text-xs font-medium text-primary ring-1 ring-inset ring-primary/20 hover:bg-primary hover:text-white transition-colors cursor-pointer">汀州府</a>
+
+<a href="/search.html?q=兴化府" class="inline-flex items-center rounded-full bg-primary/5 px-3 py-1 text-xs font-medium text-primary ring-1 ring-inset ring-primary/20 hover:bg-primary hover:text-white transition-colors cursor-pointer">兴化府</a>
+
+<a href="/search.html?q=建宁府" class="inline-flex items-center rounded-full bg-primary/5 px-3 py-1 text-xs font-medium text-primary ring-1 ring-inset ring-primary/20 hover:bg-primary hover:text-white transition-colors cursor-pointer">建宁府</a>
+
+<a href="/search.html?q=泉州府" class="inline-flex items-center rounded-full bg-primary/5 px-3 py-1 text-xs font-medium text-primary ring-1 ring-inset ring-primary/20 hover:bg-primary hover:text-white transition-colors cursor-pointer">泉州府</a>
+
+</div>
+</div>
+
+<!-- Related Volumes -->
+
+<div class="rounded-xl bg-paper dark:bg-white/5 p-6">
+<h3 class="font-serif text-base font-bold text-charcoal/80 dark:text-slate-300 mb-3">Next in Collection</h3>
+
+<a href="/volume/卷04.html" class="block group mb-3" style="margin-bottom:0">
+<div class="flex items-center justify-between">
+<span class="text-sm font-medium text-charcoal group-hover:text-primary dark:text-slate-200 transition-colors">八闽通志</span>
+<span class="material-symbols-outlined text-sm text-charcoal/40 group-hover:text-primary transition-colors">arrow_forward</span>
+</div>
+<p class="mt-1 text-xs text-charcoal/50 dark:text-slate-500 line-clamp-2">本卷为《八闽志》记载涉及1个府级行政区划，描述山川地理。...</p>
+</a>
+
+</div>
+
+</aside>
+</div>
+</div>
+</main>
+<!-- Simple Footer -->
+<footer class="mt-auto border-t border-primary/10 bg-white py-12 dark:bg-background-dark dark:border-white/10">
+<div class="mx-auto max-w-7xl px-6 flex flex-col md:flex-row justify-between items-center gap-6">
+<div class="flex items-center gap-2">
+<div class="flex h-6 w-6 items-center justify-center rounded bg-charcoal text-white">
+<span class="material-symbols-outlined text-sm">history_edu</span>
+</div>
+<span class="font-serif font-bold text-charcoal dark:text-white">Ba Min Tong Zhi Digital Project</span>
+</div>
+<p class="text-sm text-charcoal/50 dark:text-slate-500">© 2024 Digital Humanities Lab. All rights reserved.</p>
+</div>
+</footer>
+<script>
+document.getElementById('searchInput').addEventListener('keypress', function(e) {
+    if (e.key === 'Enter') {
+        window.location.href = '/search.html?q=' + encodeURIComponent(this.value);
+    }
+});
+</script>
+</body>
+</html>

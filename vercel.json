@@ -1,0 +1,8 @@
+{
+  "buildCommand": "pip install -r requirements.txt && python build.py",
+  "outputDirectory": "dist",
+  "framework": null,
+  "rewrites": [
+    { "source": "/(.*)", "destination": "/index.html" }
+  ]
+}

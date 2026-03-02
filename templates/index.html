@@ -1,0 +1,117 @@
+{% extends "base.html" %}
+
+{% block content %}
+<!-- Hero Section -->
+<section class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-16">
+    <div class="flex flex-col gap-6 order-2 lg:order-1">
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 w-fit">
+            <span class="size-2 rounded-full bg-primary animate-pulse"></span>
+            <span class="text-xs font-bold text-primary uppercase tracking-wide">Ming Dynasty Chronicle</span>
+        </div>
+        <h2 class="text-6xl lg:text-7xl font-serif font-black text-charcoal dark:text-white leading-tight tracking-tight">
+            八闽通志
+        </h2>
+        <p class="text-lg lg:text-xl text-neutral-600 dark:text-neutral-300 font-serif leading-relaxed max-w-xl">
+            Explore the comprehensive digital reconstruction of Fujian's history. 
+            Merging traditional scholarship with modern data science to unveil 43 volumes of cultural heritage.
+        </p>
+        <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 py-4">
+            <div class="flex flex-col border-l-2 border-primary/20 pl-4">
+                <span class="text-3xl font-bold text-primary font-display">{{ stats.total_volumes }}</span>
+                <span class="text-xs text-neutral-500 uppercase font-medium">Volumes</span>
+            </div>
+            <div class="flex flex-col border-l-2 border-primary/20 pl-4">
+                <span class="text-3xl font-bold text-primary font-display">{{ stats.total_place_names }}</span>
+                <span class="text-xs text-neutral-500 uppercase font-medium">Entries</span>
+            </div>
+            <div class="flex flex-col border-l-2 border-primary/20 pl-4">
+                <span class="text-3xl font-bold text-primary font-display">2.5M</span>
+                <span class="text-xs text-neutral-500 uppercase font-medium">Characters</span>
+            </div>
+            <div class="flex flex-col border-l-2 border-primary/20 pl-4">
+                <span class="text-3xl font-bold text-primary font-display">85%</span>
+                <span class="text-xs text-neutral-500 uppercase font-medium">Digitized</span>
+            </div>
+        </div>
+        <div class="flex flex-wrap gap-4 mt-2">
+            <a href="/library.html" class="flex items-center gap-2 h-12 px-6 bg-primary text-white rounded-lg font-bold hover:bg-primary/90 shadow-lg shadow-primary/20 transition-all hover:-translate-y-0.5">
+                <span class="material-symbols-outlined text-[20px]">menu_book</span>
+                <span>Start Reading</span>
+            </a>
+            <a href="/search.html" class="flex items-center gap-2 h-12 px-6 bg-white dark:bg-white/10 text-charcoal dark:text-white border border-neutral-200 dark:border-neutral-700 rounded-lg font-bold hover:bg-neutral-50 dark:hover:bg-white/5 transition-all">
+                <span class="material-symbols-outlined text-[20px]">search</span>
+                <span>Search Archive</span>
+            </a>
+        </div>
+    </div>
+    <div class="relative order-1 lg:order-2 h-[400px] lg:h-[500px] rounded-2xl overflow-hidden shadow-2xl shadow-primary/10 border border-primary/10 bg-paper">
+        <div class="absolute inset-0 flex items-center justify-center">
+            <div class="w-3/4 h-3/4 border-y-2 border-charcoal/80 flex flex-col justify-between p-8 writing-vertical-rl bg-white/40 backdrop-blur-sm shadow-inner">
+                <div class="text-charcoal/80 text-4xl font-serif font-bold tracking-[0.2em] border-l border-charcoal/20 pl-4 h-full flex flex-col justify-start">
+                    <span>八</span><span>闽</span><span>通</span><span>志</span>
+                </div>
+                <div class="text-charcoal/60 text-lg font-serif tracking-widest border-l border-charcoal/10 pl-4 h-full flex flex-col justify-end pb-12">
+                    <span>弘</span><span>治</span><span>三</span><span>年</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Volume Collection Title -->
+<div class="flex items-center justify-between mb-8 border-b border-primary/10 pb-4">
+    <h3 class="text-2xl font-serif font-bold text-charcoal dark:text-white flex items-center gap-2">
+        <span class="w-1.5 h-6 bg-primary rounded-full"></span>
+        Curated Volumes
+    </h3>
+    <a class="text-primary font-medium hover:underline text-sm flex items-center gap-1" href="/library.html">
+        View All 43 Volumes
+        <span class="material-symbols-outlined text-sm">arrow_forward</span>
+    </a>
+</div>
+<!-- Volume Grid -->
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 mb-16">
+    {% for vol in volumes[:8] %}
+    <a href="/volume/{{ vol.id }}.html" class="group bg-white dark:bg-white/5 border border-primary/10 rounded-xl p-6 hover:shadow-xl hover:shadow-primary/5 transition-all duration-300 hover:-translate-y-1 cursor-pointer relative overflow-hidden block">
+        <div class="absolute top-0 right-0 w-16 h-16 bg-primary/5 rounded-bl-full -mr-8 -mt-8 transition-transform group-hover:scale-150"></div>
+        <div class="flex justify-between items-start mb-4 relative z-10">
+            <span class="bg-primary/10 text-primary text-xs font-bold px-2 py-1 rounded">Vol. {{ vol.number }}</span>
+            <span class="material-symbols-outlined text-neutral-300 group-hover:text-primary transition-colors">bookmark</span>
+        </div>
+        <h4 class="text-xl font-serif font-bold text-charcoal dark:text-white mb-2 group-hover:text-primary transition-colors">{{ vol.title }}</h4>
+        <p class="text-sm text-neutral-500 dark:text-neutral-400 mb-4 line-clamp-2">{{ vol.summary }}...</p>
+        <div class="w-full h-32 rounded-lg bg-neutral-100 dark:bg-white/10 overflow-hidden relative">
+            <div class="absolute inset-0 bg-cover bg-center opacity-80 grayscale group-hover:grayscale-0 transition-all duration-500" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCMl2ZjabnycB5-eeVF87tKzB_ZfeV0RSy3LGyC00psIuzc8KxvqFwUkZa24UQIe8P5e_L1gscczFbEX3a1XyGFPEySY90uo1m5F8PkbmE0gFhzrtIvRSDaFzGQwMKWA7nmE5aC4C9zw5xBraa6ldUsKeeQaBAYOV4Bf3xvN-WPG4s7uXPPWKauj3xQcZliopLIQC9GeqLaT9McEzjOkphhf_w1VpIwTt50WJB9gzJ5PY1WOdxQjWpc4FB_KuSK-OjZ6JtdvqC95rY');"></div>
+        </div>
+    </a>
+    {% endfor %}
+</div>
+<!-- Featured Section: Historical Themes -->
+<div class="bg-charcoal dark:bg-neutral-800 rounded-2xl p-8 lg:p-12 text-white relative overflow-hidden">
+    <div class="absolute top-0 right-0 w-64 h-64 bg-primary rounded-full mix-blend-overlay filter blur-[100px] opacity-50"></div>
+    <div class="absolute bottom-0 left-0 w-64 h-64 bg-primary/30 rounded-full mix-blend-overlay filter blur-[80px] opacity-30"></div>
+    <div class="relative z-10 flex flex-col lg:flex-row gap-10 items-center">
+        <div class="flex-1 space-y-6">
+            <h3 class="text-3xl lg:text-4xl font-serif font-bold">Discover Historical Themes</h3>
+            <p class="text-neutral-300 text-lg leading-relaxed">
+                Navigate the archive through curated thematic lenses. From maritime trade routes to agricultural developments, explore the threads that weave the history of Ba Min together.
+            </p>
+            <div class="flex flex-wrap gap-3 pt-2">
+                <a class="px-4 py-2 rounded-full border border-white/20 hover:bg-white/10 hover:border-white text-sm transition-all" href="/search.html?q=地理">Geography</a>
+                <a class="px-4 py-2 rounded-full border border-white/20 hover:bg-white/10 hover:border-white text-sm transition-all" href="/search.html?q=食货">Economy</a>
+                <a class="px-4 py-2 rounded-full border border-white/20 hover:bg-white/10 hover:border-white text-sm transition-all" href="/search.html?q=封爵">Nobility</a>
+                <a class="px-4 py-2 rounded-full border border-white/20 hover:bg-white/10 hover:border-white text-sm transition-all" href="/search.html?q=水利">Water</a>
+            </div>
+        </div>
+        <div class="w-full lg:w-1/3">
+            <div class="aspect-square bg-neutral-800 rounded-lg border border-white/10 p-4 relative group cursor-pointer overflow-hidden">
+                <div class="relative z-10 h-full flex items-center justify-center border border-white/10">
+                    <div class="text-center">
+                        <span class="material-symbols-outlined text-5xl mb-2 text-primary">explore</span>
+                        <p class="font-bold text-lg">Start Thematic Journey</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

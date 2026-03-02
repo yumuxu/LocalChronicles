@@ -1,0 +1,63 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="mb-8">
+    <h2 class="text-3xl font-serif font-bold text-charcoal dark:text-white mb-4">Smart Search</h2>
+    <p class="text-neutral-600 dark:text-neutral-400 mb-6">Search across all 43 volumes of the Ba Min Tong Zhi</p>
+    
+    <div class="flex gap-4">
+        <div class="flex-1 relative">
+            <span class="absolute inset-y-0 left-0 flex items-center pl-4 text-primary/60">
+                <span class="material-symbols-outlined">search</span>
+            </span>
+            <input id="searchInput" value="{{ query }}" class="w-full h-14 rounded-xl border border-primary/20 bg-white dark:bg-white/10 py-2 pl-12 pr-4 text-lg text-charcoal placeholder-primary/40 focus:ring-2 focus:ring-primary dark:text-white" placeholder="Search volumes, places, people..." type="text"/>
+        </div>
+        <button id="searchBtn" class="h-14 px-8 bg-primary text-white rounded-xl font-bold hover:bg-primary/90 shadow-lg shadow-primary/20 transition-all">
+            Search
+        </button>
+    </div>
+</div>
+
+<div id="searchResults">
+    {% if results %}
+    <div class="mb-4 text-sm text-neutral-500">Found {{ results|length }} results</div>
+    <div class="space-y-4">
+        {% for result in results %}
+        <a href="/volume/{{ result.id }}.html" class="block bg-white dark:bg-white/5 border border-primary/10 rounded-xl p-6 hover:shadow-xl hover:shadow-primary/5 transition-all">
+            <div class="flex justify-between items-start mb-2">
+                <h4 class="text-xl font-serif font-bold text-charcoal dark:text-white hover:text-primary transition-colors">{{ result.title }}</h4>
+                <span class="bg-primary/10 text-primary text-xs font-bold px-2 py-1 rounded">Vol. {{ result.number }}</span>
+            </div>
+            <p class="text-sm text-neutral-500 dark:text-neutral-400 mb-2">{{ result.summary }}...</p>
+            {% if result.matched_fields %}
+            <div class="flex flex-wrap gap-2">
+                {% for field in result.matched_fields %}
+                <span class="text-[10px] uppercase tracking-wider text-neutral-400 border border-neutral-200 dark:border-neutral-700 px-2 py-0.5 rounded">{{ field }}</span>
+                {% endfor %}
+            </div>
+            {% endif %}
+        </a>
+        {% endfor %}
+    </div>
+    {% elif query %}
+    <div class="text-center py-12 text-neutral-500">
+        <span class="material-symbols-outlined text-5xl mb-4">search_off</span>
+        <p>No results found for "{{ query }}"</p>
+    </div>
+    {% endif %}
+</div>
+
+<script>
+document.getElementById('searchBtn').addEventListener('click', performSearch);
+document.getElementById('searchInput').addEventListener('keypress', function(e) {
+    if (e.key === 'Enter') performSearch();
+});
+
+function performSearch() {
+    const query = document.getElementById('searchInput').value.trim();
+    if (query) {
+        window.location.href = '/search.html?q=' + encodeURIComponent(query);
+    }
+}
+</script>
+{% endblock %}
