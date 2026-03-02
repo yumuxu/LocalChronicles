@@ -21,3 +21,9 @@ app.py
 pages/
 .streamlit/
 dist/
+stitch/分卷/code.html
+stitch/分卷/screen.png
+stitch/首页/code.html
+stitch/首页/screen.png
+test_img.png
+trae-mcp-config.json
