@@ -208,8 +208,9 @@ def smart_join(segments):
     
     text = ''.join(segments)
     
-    text = re.sub(r'([^。])(\n)([^。])', r'\1\3', text)
-    text = re.sub(r'（）', '（）', text)
+    text = re.sub(r'([^。])(\n)(\s*)([^。])', r'\1\4', text)
+    text = re.sub(r'（\s*([^）]*?)\s*）', lambda m: '（' + m.group(1).replace('\n', '').replace(' ', '') + '）', text)
+    text = re.sub(r'\s+', '', text)
     
     return text
 
