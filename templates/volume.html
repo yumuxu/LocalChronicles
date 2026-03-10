@@ -35,9 +35,52 @@
         writing-mode: vertical-rl;
         text-orientation: mixed;
     }
+    .classical-text {
+        font-family: "Noto Serif SC", "SimSun", "STSong", serif;
+        line-height: 2.2;
+        letter-spacing: 0.05em;
+    }
+    .classical-text p {
+        text-indent: 2em;
+        margin-bottom: 1.5em;
+        line-height: 2;
+    }
+    .classical-text h2 {
+        font-size: 1.5em;
+        font-weight: bold;
+        margin-top: 2em;
+        margin-bottom: 1em;
+        padding-bottom: 0.5em;
+        border-bottom: 1px solid rgba(159, 45, 35, 0.2);
+    }
+    .annotation {
+        display: inline-block;
+        background: linear-gradient(transparent 60%, rgba(159, 45, 35, 0.1) 60%);
+        cursor: help;
+    }
+    .reading-progress {
+        position: fixed;
+        top: 0;
+        left: 0;
+        height: 3px;
+        background: linear-gradient(90deg, #9f2d23, #c94a3a);
+        z-index: 100;
+        transition: width 0.1s ease;
+    }
+    .toc-sidebar {
+        position: sticky;
+        top: 100px;
+    }
+    .dark .classical-text {
+        color: #e5e5e5;
+    }
+    .dark .classical-text p {
+        color: #d1d5db;
+    }
 </style>
 </head>
 <body class="bg-background-light dark:bg-background-dark text-ink dark:text-slate-200 font-display min-h-screen flex flex-col">
+<div class="reading-progress" id="progressBar"></div>
 <!-- Header -->
 <header class="sticky top-0 z-50 w-full border-b border-primary/10 bg-background-light/95 backdrop-blur dark:bg-background-dark/95">
 <div class="mx-auto flex h-16 max-w-7xl items-center justify-between px-6">
@@ -121,7 +164,7 @@ Modern Summary
 </div>
 {% endif %}
 <!-- Main Text Content -->
-<div class="prose prose-lg max-w-none font-serif text-ink dark:text-slate-200">
+<div class="classical-text prose prose-lg max-w-none font-serif text-ink dark:text-slate-200 bg-white dark:bg-neutral-800/50 rounded-xl p-8 md:p-12 shadow-sm">
 {{ content | safe }}
 </div>
 </article>
@@ -207,6 +250,13 @@ document.getElementById('searchInput').addEventListener('keypress', function(e) 
     if (e.key === 'Enter') {
         window.location.href = '/search.html?q=' + encodeURIComponent(this.value);
     }
+});
+
+window.addEventListener('scroll', function() {
+    const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+    const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+    const scrolled = (winScroll / height) * 100;
+    document.getElementById('progressBar').style.width = scrolled + '%';
 });
 </script>
 </body>

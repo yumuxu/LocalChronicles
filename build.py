@@ -107,21 +107,36 @@ def format_content(vol_data):
     
     cleaned_text = vol_data.get('cleaned_full_text', '')
     if cleaned_text:
-        paragraphs = cleaned_text.split('\n\n')
-        for i, para in enumerate(paragraphs[:20]):
-            if para.strip():
-                parts.append(f'<p class="leading-loose mb-6 text-lg text-charcoal/90 dark:text-slate-300">{para.strip()}</p>')
+        segments = split_into_segments(cleaned_text)
+        for i, segment in enumerate(segments):
+            if not segment.strip():
+                continue
+            
+            is_header = is_section_header(segment)
+            if is_header:
+                parts.append(f'''
+                <h2 class="text-2xl font-bold text-primary mt-12 mb-6 pb-2 border-b border-primary/20 flex items-center gap-3">
+                    <span class="material-symbols-outlined text-xl">bookmark</span>
+                    {segment.strip()}
+                </h2>
+                ''')
+            else:
+                parts.append(f'''
+                <p class="leading-8 mb-8 text-lg text-charcoal/90 dark:text-slate-300 font-serif text-justify indent-8">
+                    {segment.strip()}
+                </p>
+                ''')
     
     quotes = vol_data.get('historical_quotes', [])
     if quotes:
         for quote in quotes[:3]:
             source = quote.get('source', 'Unknown')
-            text = quote.get('text', '')
-            if text:
+            content = quote.get('content', '')
+            if content:
                 parts.append(f'''
-                <div class="my-10 border-l-4 border-primary bg-primary/5 p-8 pl-8 rounded-r-lg">
-                    <p class="mb-4 text-2xl font-bold leading-relaxed text-charcoal dark:text-white italic">
-                        "{text[:200]}{'...' if len(text) > 200 else ''}"
+                <div class="my-12 border-l-4 border-primary bg-primary/5 p-8 rounded-r-lg">
+                    <p class="mb-4 text-xl font-serif leading-loose text-charcoal dark:text-white italic">
+                        "{content[:300]}{'...' if len(content) > 300 else ''}"
                     </p>
                     <div class="flex items-center gap-2 text-sm font-medium uppercase tracking-wide text-primary">
                         <span class="h-px w-8 bg-primary"></span>
@@ -131,6 +146,84 @@ def format_content(vol_data):
                 ''')
     
     return '\n'.join(parts) or '<p class="leading-loose mb-6 text-lg">Content available in the digital archive.</p>'
+
+
+def split_into_segments(text):
+    """Split text into logical segments based on section headers and paragraphs."""
+    import re
+    
+    segments = []
+    
+    header_patterns = [
+        r'^建置沿革',
+        r'^州郡',
+        r'^分野',
+        r'^山川',
+        r'^城池',
+        r'^公署',
+        r'^学校',
+        r'^科举',
+        r'^人物',
+        r'^艺文',
+        r'^风俗',
+        r'^物产',
+        r'^贡赋',
+        r'^兵制',
+        r'^驿传',
+        r'^关隘',
+        r'^桥梁',
+        r'^寺观',
+        r'^祠庙',
+        r'^陵墓',
+        r'^古迹',
+    ]
+    
+    text = text.replace('卷之一', '').replace('卷之二', '').replace('卷之三', '')
+    
+    for pattern in header_patterns:
+        text = re.sub(pattern, f'\n###{pattern[1:]}###\n', text)
+    
+    text = re.sub(r'。(?=[^。]*。)','。\n', text)
+    
+    lines = text.split('\n')
+    current_segment = []
+    
+    for line in lines:
+        line = line.strip()
+        if not line:
+            continue
+            
+        if line.startswith('###') and line.endswith('###'):
+            if current_segment:
+                segments.append(''.join(current_segment))
+                current_segment = []
+            segments.append(line[3:-3])
+        else:
+            if len(''.join(current_segment)) > 800:
+                segments.append(''.join(current_segment))
+                current_segment = []
+            current_segment.append(line)
+    
+    if current_segment:
+        segments.append(''.join(current_segment))
+    
+    return segments[:30]
+
+
+def is_section_header(text):
+    """Check if text is a section header."""
+    import re
+    header_indicators = [
+        '沿革', '分野', '山川', '城池', '公署', '学校', '科举', '人物',
+        '艺文', '风俗', '物产', '贡赋', '兵制', '驿传', '关隘', '桥梁',
+        '寺观', '祠庙', '陵墓', '古迹', '地理'
+    ]
+    text = text.strip()
+    if len(text) <= 20:
+        for indicator in header_indicators:
+            if indicator in text:
+                return True
+    return False
 
 def build_volume_page(vol, volumes, env):
     """Build individual volume page."""
