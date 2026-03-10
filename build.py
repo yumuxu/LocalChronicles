@@ -152,40 +152,19 @@ def split_into_segments(text):
     """Split text into logical segments based on section headers and paragraphs."""
     import re
     
-    segments = []
-    
-    header_patterns = [
-        r'^建置沿革',
-        r'^州郡',
-        r'^分野',
-        r'^山川',
-        r'^城池',
-        r'^公署',
-        r'^学校',
-        r'^科举',
-        r'^人物',
-        r'^艺文',
-        r'^风俗',
-        r'^物产',
-        r'^贡赋',
-        r'^兵制',
-        r'^驿传',
-        r'^关隘',
-        r'^桥梁',
-        r'^寺观',
-        r'^祠庙',
-        r'^陵墓',
-        r'^古迹',
-    ]
-    
     text = text.replace('卷之一', '').replace('卷之二', '').replace('卷之三', '')
     
-    for pattern in header_patterns:
-        text = re.sub(pattern, f'\n###{pattern[1:]}###\n', text)
+    header_patterns = [
+        '建置沿革', '州郡', '分野', '山川', '城池', '公署', '学校', '科举',
+        '人物', '艺文', '风俗', '物产', '贡赋', '兵制', '驿传', '关隘',
+        '桥梁', '寺观', '祠庙', '陵墓', '古迹'
+    ]
     
-    text = re.sub(r'。(?=[^。]*。)','。\n', text)
+    for header in header_patterns:
+        text = text.replace(header, f'\n###{header}###\n')
     
     lines = text.split('\n')
+    segments = []
     current_segment = []
     
     for line in lines:
@@ -195,19 +174,111 @@ def split_into_segments(text):
             
         if line.startswith('###') and line.endswith('###'):
             if current_segment:
-                segments.append(''.join(current_segment))
+                combined = smart_join(current_segment)
+                if combined:
+                    segments.append(combined)
                 current_segment = []
             segments.append(line[3:-3])
         else:
-            if len(''.join(current_segment)) > 800:
-                segments.append(''.join(current_segment))
-                current_segment = []
             current_segment.append(line)
+            combined = ''.join(current_segment)
+            
+            if is_good_split_point(combined):
+                segments.append(combined)
+                current_segment = []
+            elif len(combined) > 1200:
+                split_pos = find_best_split(combined)
+                if split_pos > 0:
+                    segments.append(combined[:split_pos])
+                    current_segment = [combined[split_pos:]]
     
     if current_segment:
-        segments.append(''.join(current_segment))
+        combined = smart_join(current_segment)
+        if combined:
+            segments.append(combined)
     
     return segments[:30]
+
+
+def smart_join(segments):
+    """Join segments while keeping parentheses together."""
+    import re
+    if not segments:
+        return ''
+    
+    text = ''.join(segments)
+    
+    text = re.sub(r'([^。])(\n)([^。])', r'\1\3', text)
+    text = re.sub(r'（）', '（）', text)
+    
+    return text
+
+
+def is_good_split_point(text):
+    """Check if this is a good point to split the text."""
+    import re
+    
+    if not text:
+        return False
+    
+    if text.endswith('。') or text.endswith('！') or text.endswith('？'):
+        open_parens = text.count('（')
+        close_parens = text.count('）')
+        
+        if open_parens == close_parens:
+            return True
+        
+        if open_parens < close_parens:
+            return True
+        
+        if open_parens > close_parens:
+            last_para = text.rfind('（')
+            last_close = text.rfind('）')
+            if last_close > last_para:
+                return True
+        
+        bracket_balance = text.count('[') - text.count(']')
+        if bracket_balance <= 0 and len(text) > 400:
+            return True
+    
+    return False
+
+
+def find_best_split(text):
+    """Find the best position to split text."""
+    import re
+    
+    if not text:
+        return 0
+    
+    candidates = []
+    
+    for match in re.finditer(r'[。！？]\s*', text):
+        pos = match.end()
+        open_parens = text[:pos].count('（')
+        close_parens = text[:pos].count('）')
+        
+        if open_parens == close_parens:
+            candidates.append(pos)
+    
+    for match in re.finditer(r'[,，]\s*', text):
+        pos = match.end()
+        if 300 < pos < len(text) - 100:
+            open_parens = text[:pos].count('（')
+            close_parens = text[:pos].count('）')
+            if open_parens == close_parens:
+                return pos
+    
+    if candidates:
+        for c in reversed(candidates):
+            if 200 < c < len(text) - 100:
+                return c
+    
+    last_period = text.rfind('。')
+    if last_period > 200:
+        return last_period + 1
+    
+    return len(text) // 2
 
 
 def is_section_header(text):
