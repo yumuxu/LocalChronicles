@@ -163,7 +163,11 @@ def split_into_segments(text):
     ]
     
     for header in header_patterns:
-        text = text.replace(header, f'\n###{header}###\n')
+        safe_header = header
+        if header == '山川':
+            text = re.sub(r'(?<=[。！？，、])(山川)(?![坛脉])', r'\n###\1###\n', text)
+        else:
+            text = text.replace(header, f'\n###{header}###\n')
     
     lines = [l.strip() for l in text.split('\n') if l.strip()]
     segments = []
