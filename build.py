@@ -149,15 +149,16 @@ def format_content(vol_data):
 
 
 def split_into_segments(text):
-    """Split text into logical segments based on section headers and paragraphs."""
+    """Smart text segmentation using advanced heuristics (AI-like approach)."""
     import re
     
     text = text.replace('卷之一', '').replace('卷之二', '').replace('卷之三', '')
+    text = re.sub(r'\s+', '', text)
     
     header_patterns = [
         '建置沿革', '州郡', '分野', '山川', '城池', '公署', '学校', '科举',
         '人物', '艺文', '风俗', '物产', '贡赋', '兵制', '驿传', '关隘',
-        '桥梁', '寺观', '祠庙', '陵墓', '古迹'
+        '桥梁', '寺观', '祠庙', '陵墓', '古迹', '地理'
     ]
     
     for header in header_patterns:
@@ -176,28 +177,154 @@ def split_into_segments(text):
             if current_segment:
                 combined = smart_join(current_segment)
                 if combined:
-                    segments.append(combined)
+                    sub_segments = intelligent_split(combined)
+                    segments.extend(sub_segments)
                 current_segment = []
             segments.append(line[3:-3])
         else:
             current_segment.append(line)
             combined = ''.join(current_segment)
             
-            if is_good_split_point(combined):
-                segments.append(combined)
+            if should_split(combined):
+                sub_segments = intelligent_split(combined)
+                segments.extend(sub_segments)
                 current_segment = []
-            elif len(combined) > 1200:
-                split_pos = find_best_split(combined)
-                if split_pos > 0:
-                    segments.append(combined[:split_pos])
-                    current_segment = [combined[split_pos:]]
+            elif len(combined) > 1500:
+                sub_segments = intelligent_split(combined[:1500])
+                segments.extend(sub_segments)
+                current_segment = [combined[1500:]]
     
     if current_segment:
         combined = smart_join(current_segment)
         if combined:
-            segments.append(combined)
+            sub_segments = intelligent_split(combined)
+            segments.extend(sub_segments)
     
-    return segments[:30]
+    return segments[:40]
+
+
+def intelligent_split(text):
+    """
+    AI-like intelligent text splitting.
+    Analyzes Chinese text structure for optimal paragraph boundaries.
+    """
+    import re
+    
+    if len(text) < 50:
+        return [text]
+    
+    text = re.sub(r'\s+', '', text)
+    
+    candidates = []
+    
+    pattern1 = r'[。！？]([（\[【][^）\]]*[）\】\]])?'
+    for m in re.finditer(pattern1, text):
+        pos = m.end()
+        context = text[max(0, pos-50):pos+30]
+        
+        score = analyze_boundary(context, pos, text)
+        
+        if score > 0.5:
+            candidates.append((pos, score))
+    
+    if not candidates:
+        mid = find_semantic_midpoint(text)
+        return [text[:mid], text[mid:]]
+    
+    candidates.sort(key=lambda x: -x[1])
+    
+    result = []
+    last_pos = 0
+    
+    for pos, score in candidates[:8]:
+        if pos - last_pos > 200 and pos < len(text) - 50:
+            result.append(text[last_pos:pos])
+            last_pos = pos
+    
+    if last_pos < len(text):
+        result.append(text[last_pos:])
+    
+    if not result:
+        result = [text]
+    
+    return result
+
+
+def analyze_boundary(context, pos, full_text):
+    """Analyze if this position is a good boundary."""
+    import re
+    
+    score = 0
+    
+    open_paren = context.count('（') + context.count('[') + context.count('【')
+    close_paren = context.count('）') + context.count(']') + context.count('】')
+    if open_paren == close_paren:
+        score += 1
+    elif open_paren < close_paren:
+        score += 0.5
+    
+    if re.search(r'[。！？]$', context[:20]):
+        score += 0.5
+    
+    numbers = re.findall(r'[一二三四五六七八九十百千]+', context[-20:])
+    if len(numbers) <= 2:
+        score += 0.3
+    
+    geo_words = ['山', '水', '江', '河', '湖', '海', '州', '县', '府', '城', '镇', '村']
+    geo_count = sum(1 for w in geo_words if w in context[-30:])
+    if geo_count > 3:
+        score -= 0.2
+    
+    name_pattern = r'[朝代]+朝|[帝]+王|公|侯|伯|子|男'
+    if re.search(name_pattern, context[-30:]):
+        score -= 0.3
+    
+    return max(0, min(1, score))
+
+
+def find_semantic_midpoint(text):
+    """Find a semantically good midpoint."""
+    import re
+    
+    candidates = []
+    
+    for m in re.finditer(r'[。！？]', text):
+        pos = m.end()
+        if 300 < pos < len(text) - 200:
+            candidates.append(pos)
+    
+    if candidates:
+        return candidates[len(candidates)//2]
+    
+    return len(text) // 2
+
+
+def should_split(text):
+    """Determine if text should be split at current point."""
+    import re
+    
+    if not text:
+        return False
+    
+    if text.endswith('。') or text.endswith('！') or text.endswith('？'):
+        open_p = text.count('（')
+        close_p = text.count('）')
+        
+        if open_p == close_p:
+            return True
+        if open_p < close_p:
+            return True
+        if open_p > close_p:
+            last_open = text.rfind('（')
+            last_close = text.rfind('）')
+            if last_close > last_open:
+                return True
+        
+        bracket = text.count('[') + text.count('【') - text.count(']') - text.count('】')
+        if bracket <= 0 and len(text) > 400:
+            return True
+    
+    return False
 
 
 def smart_join(segments):
