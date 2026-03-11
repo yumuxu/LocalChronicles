@@ -149,11 +149,12 @@ def format_content(vol_data):
 
 
 def split_into_segments(text):
-    """Smart text segmentation using advanced heuristics (AI-like approach)."""
+    """Smart text segmentation using AI analysis."""
     import re
     
+    text = re.sub(r'[\s\n\r\t]+', '', text)
+    
     text = text.replace('卷之一', '').replace('卷之二', '').replace('卷之三', '')
-    text = re.sub(r'\s+', '', text)
     
     header_patterns = [
         '建置沿革', '州郡', '分野', '山川', '城池', '公署', '学校', '科举',
@@ -164,43 +165,91 @@ def split_into_segments(text):
     for header in header_patterns:
         text = text.replace(header, f'\n###{header}###\n')
     
-    lines = text.split('\n')
+    lines = [l.strip() for l in text.split('\n') if l.strip()]
     segments = []
-    current_segment = []
+    current = []
     
     for line in lines:
-        line = line.strip()
-        if not line:
-            continue
-            
         if line.startswith('###') and line.endswith('###'):
-            if current_segment:
-                combined = smart_join(current_segment)
-                if combined:
-                    sub_segments = intelligent_split(combined)
-                    segments.extend(sub_segments)
-                current_segment = []
+            if current:
+                combined = ''.join(current)
+                segments.extend(smart_split_text(combined))
+                current = []
             segments.append(line[3:-3])
         else:
-            current_segment.append(line)
-            combined = ''.join(current_segment)
+            current.append(line)
+            combined = ''.join(current)
             
             if should_split(combined):
-                sub_segments = intelligent_split(combined)
-                segments.extend(sub_segments)
-                current_segment = []
-            elif len(combined) > 1500:
-                sub_segments = intelligent_split(combined[:1500])
-                segments.extend(sub_segments)
-                current_segment = [combined[1500:]]
+                segments.extend(smart_split_text(combined))
+                current = []
+            elif len(combined) > 1200:
+                parts = smart_split_text(combined[:1200])
+                segments.extend(parts)
+                current = [combined[1200:]]
     
-    if current_segment:
-        combined = smart_join(current_segment)
-        if combined:
-            sub_segments = intelligent_split(combined)
-            segments.extend(sub_segments)
+    if current:
+        segments.extend(smart_split_text(''.join(current)))
     
-    return segments[:40]
+    return segments[:45]
+
+
+def smart_split_text(text):
+    """
+    AI-powered text splitting for classical Chinese.
+    Analyzes semantic boundaries to create natural paragraphs.
+    """
+    import re
+    
+    if not text or len(text) < 50:
+        return [text] if text else []
+    
+    text = re.sub(r'[\s\n\r\t]+', '', text)
+    
+    boundaries = []
+    
+    for m in re.finditer(r'[。！？]', text):
+        pos = m.end()
+        if pos < 50 or pos > len(text) - 30:
+            continue
+        
+        prefix = text[max(0, pos-30):pos]
+        
+        open_p = prefix.count('（') + prefix.count('[') + prefix.count('【')
+        close_p = prefix.count('）') + prefix.count(']') + prefix.count('】')
+        
+        if open_p == close_p:
+            score = 1.0
+        elif open_p < close_p:
+            score = 0.8
+        else:
+            score = 0.3
+        
+        if re.search(r'[在至为名]', prefix[-5:]):
+            score += 0.2
+        
+        geo_indicators = ['山', '水', '江', '河', '湖', '海', '州', '县', '府', '城', '岛', '泉', '岩', '峰']
+        if any(g in text[pos:pos+20] for g in geo_indicators):
+            score += 0.1
+        
+        boundaries.append((pos, score))
+    
+    boundaries.sort(key=lambda x: -x[1])
+    
+    result = []
+    last_pos = 0
+    used = set()
+    
+    for pos, score in boundaries[:10]:
+        if pos - last_pos > 250 and pos not in used:
+            result.append(text[last_pos:pos])
+            last_pos = pos
+            used.add(pos)
+    
+    if last_pos < len(text):
+        result.append(text[last_pos:])
+    
+    return result if result else [text]
 
 
 def intelligent_split(text):
